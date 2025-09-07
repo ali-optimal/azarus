@@ -24,11 +24,18 @@ import BookDemo from "./pages/BookDemo";
 // Feature Pages
 import Analytics from "./pages/features/Analytics";
 import Security from "./pages/features/Security";
+import Reporting from "./pages/features/Reporting";
+import Customization from "./pages/features/Customization";
+import Scalability from "./pages/features/Scalability";
+import Integration from "./pages/features/Integration";
 
 // Solution Pages
 import ByIndustry from "./pages/solutions/ByIndustry";
+import ByNeed from "./pages/solutions/ByNeed";
+import BySector from "./pages/solutions/BySector";
 
 // Resource Pages
+import Resources from "./pages/Resources";
 import Blog from "./pages/resources/Blog";
 import CaseStudies from "./pages/resources/CaseStudies";
 import WhitePapers from "./pages/resources/WhitePapers";
@@ -72,11 +79,18 @@ const App = () => (
           {/* Feature Pages */}
           <Route path="/features/analytics" element={<Analytics />} />
           <Route path="/features/security" element={<Security />} />
+          <Route path="/features/reporting" element={<Reporting />} />
+          <Route path="/features/customization" element={<Customization />} />
+          <Route path="/features/scalability" element={<Scalability />} />
+          <Route path="/features/integration" element={<Integration />} />
           
           {/* Solution Pages */}
           <Route path="/solutions/by-industry" element={<ByIndustry />} />
+          <Route path="/solutions/by-need" element={<ByNeed />} />
+          <Route path="/solutions/by-sector" element={<BySector />} />
           
           {/* Resource Pages */}
+          <Route path="/resources" element={<Resources />} />
           <Route path="/resources/blog" element={<Blog />} />
           <Route path="/resources/case-studies" element={<CaseStudies />} />
           <Route path="/resources/white-papers" element={<WhitePapers />} />

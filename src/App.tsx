@@ -30,9 +30,18 @@ import ByIndustry from "./pages/solutions/ByIndustry";
 
 // Resource Pages
 import Blog from "./pages/resources/Blog";
+import CaseStudies from "./pages/resources/CaseStudies";
+import WhitePapers from "./pages/resources/WhitePapers";
+import Documentation from "./pages/resources/Documentation";
+import ReleaseNotes from "./pages/resources/ReleaseNotes";
 
 // Company Pages
 import About from "./pages/company/About";
+import Careers from "./pages/company/Careers";
+
+// Legal Pages
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import TermsOfService from "./pages/legal/TermsOfService";
 
 const queryClient = new QueryClient();
 
@@ -69,9 +78,18 @@ const App = () => (
           
           {/* Resource Pages */}
           <Route path="/resources/blog" element={<Blog />} />
+          <Route path="/resources/case-studies" element={<CaseStudies />} />
+          <Route path="/resources/white-papers" element={<WhitePapers />} />
+          <Route path="/resources/documentation" element={<Documentation />} />
+          <Route path="/resources/release-notes" element={<ReleaseNotes />} />
           
           {/* Company Pages */}
           <Route path="/company/about" element={<About />} />
+          <Route path="/company/careers" element={<Careers />} />
+          
+          {/* Legal Pages */}
+          <Route path="/legal/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/legal/terms-of-service" element={<TermsOfService />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

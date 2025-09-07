@@ -12,29 +12,32 @@ import {
   Puzzle,
   ArrowRight
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const ModulesGrid = () => {
+  const { t } = useTranslation();
+  
   const modules = [
     {
       icon: Users,
-      title: "Customer Relationship CRM",
-      description: "Manage customer relationships, sales pipeline, and lead nurturing with advanced automation.",
+      title: t("products.crm.name"),
+      description: t("products.crm.description"),
       color: "from-blue-500 to-blue-600",
       features: ["Lead Management", "Sales Pipeline", "Customer Analytics"],
       href: "/products/crm"
     },
     {
       icon: Calculator,
-      title: "Finance / Accounting",
-      description: "Complete financial management with automated bookkeeping, reporting, and compliance tools.",
+      title: t("products.finance.name"),
+      description: t("products.finance.description"),
       color: "from-green-500 to-green-600",
       features: ["Automated Bookkeeping", "Financial Reports", "Tax Compliance"],
       href: "/products/finance"
     },
     {
       icon: UserCog,
-      title: "HR Management",
-      description: "Comprehensive human resources management from recruitment to performance evaluation.",
+      title: t("products.hr.name"),
+      description: t("products.hr.description"),
       color: "from-purple-500 to-purple-600",
       features: ["Employee Records", "Performance Reviews", "Recruitment"],
       href: "/products/hr"
@@ -49,40 +52,40 @@ const ModulesGrid = () => {
     },
     {
       icon: Clock,
-      title: "Project Management",
-      description: "Plan, track and deliver projects with comprehensive project management and time tracking tools.",
+      title: t("products.projects.name"),
+      description: t("products.projects.description"),
       color: "from-teal-500 to-teal-600",
       features: ["Project Planning", "Time Tracking", "Team Collaboration"],
       href: "/products/projects"
     },
     {
       icon: Package,
-      title: "Stock Management",
-      description: "Inventory control with real-time tracking, automated reordering, and warehouse management.",
+      title: t("products.stock.name"),
+      description: t("products.stock.description"),
       color: "from-red-500 to-red-600",
       features: ["Inventory Control", "Automated Reordering", "Warehouse Management"],
       href: "/products/stock"
     },
     {
       icon: ShoppingCart,
-      title: "Marketing Automation",
-      description: "Streamlined marketing campaigns with automation, lead generation, and customer engagement tools.",
+      title: t("products.marketing.name"),
+      description: t("products.marketing.description"),
       color: "from-indigo-500 to-indigo-600",
       features: ["Email Campaigns", "Lead Generation", "Marketing Analytics"],
       href: "/products/marketing"
     },
     {
       icon: Building,
-      title: "Assets Management",
-      description: "Track and manage company assets with depreciation calculations and maintenance scheduling.",
+      title: t("products.assets.name"),
+      description: t("products.assets.description"),
       color: "from-pink-500 to-pink-600",
       features: ["Asset Tracking", "Depreciation", "Maintenance Scheduling"],
       href: "/products/assets"
     },
     {
       icon: Puzzle,
-      title: "Custom Modules",
-      description: "Tailored solutions built specifically for your unique business requirements and processes.",
+      title: t("products.custom.name"),
+      description: t("products.custom.description"),
       color: "from-orange-500 to-orange-600",
       features: ["Custom Development", "Business Logic", "Integration Ready"],
       href: "/products/custom"
@@ -95,11 +98,10 @@ const ModulesGrid = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            Complete <span className="text-gradient">Business Modules</span>
+            {t("modules.title")} <span className="text-gradient"></span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive ERP modules designed to handle every aspect of your business operations, 
-            from customer relationships to financial management.
+            {t("modules.subtitle")}
           </p>
         </div>
 
@@ -142,13 +144,12 @@ const ModulesGrid = () => {
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
           <div className="bg-hero-gradient rounded-2xl p-8 text-white">
-            <h3 className="text-2xl font-bold mb-2">Need Custom Modules?</h3>
+            <h3 className="text-2xl font-bold mb-2">{t("modules.customNeed.title")}</h3>
             <p className="text-white/90 mb-6 max-w-2xl mx-auto">
-              Our development team can create specialized modules tailored to your unique business requirements. 
-              Get a personalized solution that fits perfectly with your workflow.
+              {t("modules.customNeed.subtitle")}
             </p>
             <Button variant="outline" size="lg" className="bg-white text-primary hover:bg-white/90" asChild>
-              <a href="/products/custom">Discuss Custom Development</a>
+              <a href="/products/custom">{t("modules.customNeed.button")}</a>
             </Button>
           </div>
         </div>

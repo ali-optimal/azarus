@@ -6,92 +6,70 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin, Clock, MessageSquare, Users } from "lucide-react";
+import { Mail, Phone, MessageSquare, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
       <section className="py-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Get In Touch
+              {t("contact.title")}
             </h1>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Ready to transform your business? Contact our team for sales inquiries, support, or partnership opportunities.
+              {t("contact.subtitle")}
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+                <CardTitle className="text-2xl">{t("contact.form.title")}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
-                    <Label htmlFor="firstName">First Name</Label>
-                    <Input id="firstName" placeholder="John" />
+                    <Label htmlFor="firstName">{t("contact.form.firstName")}</Label>
+                    <Input id="firstName" placeholder={t("contact.form.placeholders.firstName")} />
                   </div>
                   <div>
-                    <Label htmlFor="lastName">Last Name</Label>
-                    <Input id="lastName" placeholder="Doe" />
+                    <Label htmlFor="lastName">{t("contact.form.lastName")}</Label>
+                    <Input id="lastName" placeholder={t("contact.form.placeholders.lastName")} />
                   </div>
                 </div>
                 
                 <div>
-                  <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="john@company.com" />
+                  <Label htmlFor="email">{t("contact.form.email")}</Label>
+                  <Input id="email" type="email" placeholder={t("contact.form.placeholders.email")} />
                 </div>
                 
                 <div>
-                  <Label htmlFor="company">Company</Label>
-                  <Input id="company" placeholder="Company Name" />
+                  <Label htmlFor="company">{t("contact.form.company")}</Label>
+                  <Input id="company" placeholder={t("contact.form.placeholders.company")} />
                 </div>
                 
                 <div>
-                  <Label htmlFor="phone">Phone</Label>
-                  <Input id="phone" placeholder="+1 (555) 123-4567" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="inquiryType">Inquiry Type</Label>
-                  <Select>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select inquiry type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="sales">Sales Inquiry</SelectItem>
-                      <SelectItem value="support">Customer Support</SelectItem>
-                      <SelectItem value="partnership">Partnership</SelectItem>
-                      <SelectItem value="demo">Request Demo</SelectItem>
-                      <SelectItem value="other">Other</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div>
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">{t("contact.form.message")}</Label>
                   <Textarea 
                     id="message" 
-                    placeholder="Tell us about your needs and how we can help..."
+                    placeholder={t("contact.form.placeholders.message")}
                     rows={5}
                   />
                 </div>
                 
                 <Button className="w-full" size="lg">
-                  Send Message
+                  {t("contact.form.sendMessage")}
                 </Button>
               </CardContent>
             </Card>
 
-            {/* Contact Information */}
             <div className="space-y-8">
-              {/* Contact Cards */}
               <div className="grid gap-6">
                 <Card className="p-6">
                   <div className="flex items-center gap-4">
@@ -99,8 +77,8 @@ const Contact = () => {
                       <MessageSquare className="h-6 w-6 text-primary" />
                     </div>
                      <div>
-                       <h3 className="font-semibold text-lg">Sales Inquiries</h3>
-                       <p className="text-muted-foreground">Get pricing and product information</p>
+                       <h3 className="font-semibold text-lg">{t("contact.info.sales.title")}</h3>
+                       <p className="text-muted-foreground">{t("contact.info.sales.description")}</p>
                        <p className="text-primary font-medium">info@azaruserp.com</p>
                      </div>
                   </div>
@@ -112,8 +90,8 @@ const Contact = () => {
                       <Users className="h-6 w-6 text-primary" />
                     </div>
                      <div>
-                       <h3 className="font-semibold text-lg">Customer Support</h3>
-                       <p className="text-muted-foreground">Technical support and assistance</p>
+                       <h3 className="font-semibold text-lg">{t("contact.info.support.title")}</h3>
+                       <p className="text-muted-foreground">{t("contact.info.support.description")}</p>
                        <p className="text-primary font-medium">info@azaruserp.com</p>
                      </div>
                   </div>
@@ -125,75 +103,14 @@ const Contact = () => {
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
                      <div>
-                       <h3 className="font-semibold text-lg">Phone Support</h3>
-                       <p className="text-muted-foreground">Monday to Friday, 9 AM - 6 PM GMT</p>
+                       <h3 className="font-semibold text-lg">{t("contact.info.phone.title")}</h3>
+                       <p className="text-muted-foreground">{t("contact.info.phone.description")}</p>
                        <p className="text-primary font-medium">+44 1865 60 0679</p>
                      </div>
                   </div>
                 </Card>
               </div>
-
-
-              {/* Quick Actions */}
-              <div className="space-y-4">
-                <Button className="w-full" size="lg" variant="outline">
-                  Schedule a Demo
-                </Button>
-                <Button className="w-full" size="lg" variant="outline">
-                  Download Brochure
-                </Button>
-              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Partner Program Section */}
-      <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Partner With Us</h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Join our partner program and help businesses transform with Azarus ERP
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <Card className="text-center p-6">
-              <CardHeader>
-                <CardTitle>Implementation Partners</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Help clients implement and customize Azarus ERP solutions
-                </p>
-                <Button variant="outline">Learn More</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6">
-              <CardHeader>
-                <CardTitle>Technology Partners</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Integrate your solutions with our platform
-                </p>
-                <Button variant="outline">Learn More</Button>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center p-6">
-              <CardHeader>
-                <CardTitle>Reseller Partners</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  Sell Azarus ERP to your customer base
-                </p>
-                <Button variant="outline">Learn More</Button>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>

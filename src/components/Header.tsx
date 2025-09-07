@@ -9,37 +9,48 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Languages } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "react-i18next";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const isRTL = i18n.language === 'ar';
+
+  const changeLanguage = (lng: string) => {
+    i18n.changeLanguage(lng);
+    document.documentElement.dir = lng === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = lng;
+  };
 
   const products = [
-    { name: "Customer Relationship CRM", href: "/products/crm", description: "Manage customer relationships and sales pipeline" },
-    { name: "Marketing Automation", href: "/products/marketing", description: "Automate marketing campaigns and lead nurturing" },
-    { name: "Projects Management", href: "/products/projects", description: "Plan, track and deliver projects efficiently" },
-    { name: "HR & Payroll", href: "/products/hr", description: "Human resources and payroll management" },
-    { name: "Finance / Accounting", href: "/products/finance", description: "Complete financial management solution" },
-    { name: "Stock Management", href: "/products/stock", description: "Inventory and warehouse management" },
-    { name: "Assets Management", href: "/products/assets", description: "Track and manage company assets" },
-    { name: "Custom Modules", href: "/products/custom", description: "Tailored solutions for your business needs" },
+    { name: t("products.crm.name"), href: "/products/crm", description: t("products.crm.description") },
+    { name: t("products.marketing.name"), href: "/products/marketing", description: t("products.marketing.description") },
+    { name: t("products.projects.name"), href: "/products/projects", description: t("products.projects.description") },
+    { name: t("products.hr.name"), href: "/products/hr", description: t("products.hr.description") },
+    { name: t("products.finance.name"), href: "/products/finance", description: t("products.finance.description") },
+    { name: t("products.stock.name"), href: "/products/stock", description: t("products.stock.description") },
+    { name: t("products.assets.name"), href: "/products/assets", description: t("products.assets.description") },
+    { name: t("products.custom.name"), href: "/products/custom", description: t("products.custom.description") },
   ];
 
   const features = [
-    { name: "Advanced Analytics", href: "/features/analytics" },
-    { name: "Real-time Reporting", href: "/features/reporting" },
-    { name: "Customizability", href: "/features/customization" },
-    { name: "Scalability", href: "/features/scalability" },
-    { name: "Security", href: "/features/security" },
-    { name: "Integration", href: "/features/integration" },
+    { name: t("features.analytics"), href: "/features/analytics" },
+    { name: t("features.reporting"), href: "/features/reporting" },
+    { name: t("features.customization"), href: "/features/customization" },
+    { name: t("features.scalability"), href: "/features/scalability" },
+    { name: t("features.security"), href: "/features/security" },
+    { name: t("features.integration"), href: "/features/integration" },
   ];
 
   const solutions = [
-    { name: "By Need", href: "/solutions/by-need" },
-    { name: "By Sector", href: "/solutions/by-sector" },
-    { name: "Resources", href: "/resources" },
+    { name: t("solutions.byNeed"), href: "/solutions/by-need" },
+    { name: t("solutions.bySector"), href: "/solutions/by-sector" },
+    { name: t("solutions.resources"), href: "/resources" },
   ];
 
   return (
@@ -59,12 +70,12 @@ const Header = () => {
           <NavigationMenuList>
             <NavigationMenuItem>
               <NavigationMenuLink href="/" className={navigationMenuTriggerStyle()}>
-                Home
+                {t("nav.home")}
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Products</NavigationMenuTrigger>
+              <NavigationMenuTrigger>{t("nav.products")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-3 p-6 w-[500px] lg:w-[600px] lg:grid-cols-2">
                   {products.map((product) => (
@@ -80,7 +91,7 @@ const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Features</NavigationMenuTrigger>
+              <NavigationMenuTrigger>{t("nav.features")}</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[300px] lg:w-[400px]">
                   {features.map((feature) => (
@@ -93,7 +104,7 @@ const Header = () => {
             </NavigationMenuItem>
 
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
+              <NavigationMenuTrigger>{t("nav.solutions")}</NavigationMenuTrigger>
               <NavigationMenuContent className="left-0">
                 <div className="grid gap-3 p-4 w-[280px]">
                   {solutions.map((solution) => (
@@ -107,22 +118,45 @@ const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuLink href="/pricing" className={navigationMenuTriggerStyle()}>
-                Pricing
+                {t("nav.pricing")}
               </NavigationMenuLink>
             </NavigationMenuItem>
 
             <NavigationMenuItem>
               <NavigationMenuLink href="/contact" className={navigationMenuTriggerStyle()}>
-                Contact
+                {t("nav.contact")}
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
 
         {/* CTA Buttons */}
-        <div className="ml-auto flex items-center space-x-4">
+        <div className={cn("ml-auto flex items-center", isRTL ? "space-x-reverse space-x-4" : "space-x-4")}>
+          {/* Language Switcher */}
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
+                <Languages className="h-5 w-5" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" className="bg-background border border-border">
+              <DropdownMenuItem 
+                onClick={() => changeLanguage('en')}
+                className={cn(i18n.language === 'en' && "bg-accent")}
+              >
+                English
+              </DropdownMenuItem>
+              <DropdownMenuItem 
+                onClick={() => changeLanguage('ar')}
+                className={cn(i18n.language === 'ar' && "bg-accent")}
+              >
+                العربية
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+
           <Button asChild variant="hero" size="lg" className="hidden lg:inline-flex">
-            <a href="/book-demo">Book a Demo</a>
+            <a href="/book-demo">{t("nav.bookDemo")}</a>
           </Button>
 
           {/* Mobile Menu */}
@@ -132,18 +166,34 @@ const Header = () => {
                 <Menu className="h-5 w-5" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+            <SheetContent side={isRTL ? "left" : "right"} className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-8">
-                <a href="/" className="text-lg font-medium">Home</a>
-                <a href="/products" className="text-lg font-medium">Products</a>
-                <a href="/features" className="text-lg font-medium">Features</a>
-                <a href="/solutions" className="text-lg font-medium">Solutions</a>
-                <a href="/pricing" className="text-lg font-medium">Pricing</a>
-                <a href="/contact" className="text-lg font-medium">Contact</a>
+                <a href="/" className="text-lg font-medium">{t("nav.home")}</a>
+                <a href="/products" className="text-lg font-medium">{t("nav.products")}</a>
+                <a href="/features" className="text-lg font-medium">{t("nav.features")}</a>
+                <a href="/solutions" className="text-lg font-medium">{t("nav.solutions")}</a>
+                <a href="/pricing" className="text-lg font-medium">{t("nav.pricing")}</a>
+                <a href="/contact" className="text-lg font-medium">{t("nav.contact")}</a>
                 <div className="pt-4 space-y-2">
                   <Button asChild variant="hero" className="w-full">
-                    <a href="/book-demo">Book a Demo</a>
+                    <a href="/book-demo">{t("nav.bookDemo")}</a>
                   </Button>
+                  <div className="flex justify-center space-x-2 pt-2">
+                    <Button
+                      variant={i18n.language === 'en' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => changeLanguage('en')}
+                    >
+                      EN
+                    </Button>
+                    <Button
+                      variant={i18n.language === 'ar' ? 'default' : 'outline'}
+                      size="sm"
+                      onClick={() => changeLanguage('ar')}
+                    >
+                      AR
+                    </Button>
+                  </div>
                 </div>
               </nav>
             </SheetContent>

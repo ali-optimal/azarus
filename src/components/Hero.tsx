@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Play, ArrowRight, CheckCircle } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 section-padding">
       {/* Background Grid */}
@@ -13,13 +16,10 @@ const Hero = () => {
           <div className="space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-gradient">Empower Your Growth.</span>
-                <br />
-                <span className="text-foreground">Unleash Potential.</span>
+                <span className="text-gradient">{t("hero.title")}</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-lg">
-                Harness the power of comprehensive automation, customizable modules, and real-time insights. 
-                Azarus ERP—tailored to your business needs, facilitating faster implementation.
+                {t("hero.subtitle")}
               </p>
             </div>
 
@@ -43,13 +43,13 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild variant="gradient" size="xl" className="group">
                 <a href="/book-demo">
-                  Book a Demo
+                  {t("hero.getStarted")}
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
               <Button variant="outline" size="xl" className="group">
                 <Play className="mr-2 h-4 w-4" />
-                Watch Video
+                {t("hero.watchDemo")}
               </Button>
             </div>
           </div>

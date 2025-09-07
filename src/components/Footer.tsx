@@ -9,15 +9,18 @@ import {
   Linkedin, 
   Youtube 
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   const productLinks = [
-    { name: "CRM", href: "/products/crm" },
-    { name: "Marketing Automation", href: "/products/marketing" },
-    { name: "HR & Payroll", href: "/products/hr" },
-    { name: "Finance / Accounting", href: "/products/finance" },
-    { name: "Stock Management", href: "/products/stock" },
-    { name: "Assets Management", href: "/products/assets" }
+    { name: t("footer.products.crm"), href: "/products/crm" },
+    { name: t("footer.products.marketing"), href: "/products/marketing" },
+    { name: t("footer.products.hr"), href: "/products/hr" },
+    { name: t("footer.products.finance"), href: "/products/finance" },
+    { name: t("footer.products.inventory"), href: "/products/stock" },
+    { name: t("footer.products.inventory"), href: "/products/assets" }
   ];
 
   const solutionLinks = [
@@ -30,7 +33,7 @@ const Footer = () => {
   ];
 
   const resourceLinks = [
-    { name: "Blog", href: "/resources/blog" },
+    { name: t("footer.company.blog"), href: "/resources/blog" },
     { name: "Case Studies", href: "/resources/case-studies" },
     { name: "White Papers", href: "/resources/white-papers" },
     { name: "Documentation", href: "/resources/documentation" },
@@ -39,12 +42,12 @@ const Footer = () => {
   ];
 
   const companyLinks = [
-    { name: "About Us", href: "/company/about" },
-    { name: "Careers", href: "/company/careers" },
-    { name: "Contact", href: "/contact" },
-    { name: "Privacy Policy", href: "/legal/privacy-policy" },
-    { name: "Terms of Service", href: "/legal/terms-of-service" },
-    { name: "Security", href: "/features/security" }
+    { name: t("footer.company.about"), href: "/company/about" },
+    { name: t("footer.company.careers"), href: "/company/careers" },
+    { name: t("footer.company.contact"), href: "/contact" },
+    { name: t("footer.legal.privacy"), href: "/legal/privacy-policy" },
+    { name: t("footer.legal.terms"), href: "/legal/terms-of-service" },
+    { name: t("footer.features.security"), href: "/features/security" }
   ];
 
   return (
@@ -98,7 +101,7 @@ const Footer = () => {
 
             {/* Products */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Products</h3>
+              <h3 className="font-semibold text-lg">{t("footer.products.title")}</h3>
               <ul className="space-y-2">
                 {productLinks.map((link) => (
                   <li key={link.name}>
@@ -149,7 +152,7 @@ const Footer = () => {
 
             {/* Company */}
             <div className="space-y-4">
-              <h3 className="font-semibold text-lg">Company</h3>
+              <h3 className="font-semibold text-lg">{t("footer.company.title")}</h3>
               <ul className="space-y-2">
                 {companyLinks.map((link) => (
                   <li key={link.name}>
@@ -174,7 +177,7 @@ const Footer = () => {
         <div className="container-wide">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
              <p className="text-sm text-white/60">
-               © {new Date().getFullYear()} Azarus ERP. All rights reserved.
+               {t("footer.copyright")}
              </p>
             <div className="flex items-center gap-6 text-sm text-white/60">
               <a href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy</a>

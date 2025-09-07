@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const CTABand = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="section-padding bg-hero-gradient text-white relative overflow-hidden">
       {/* Background Pattern */}
@@ -12,11 +15,10 @@ const CTABand = () => {
           {/* Main Headline */}
           <div className="space-y-4">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-              See Azarus in action in 20 minutes
+              {t("ctaBand.title")}
             </h2>
             <p className="text-xl text-white/90 max-w-2xl mx-auto">
-              Experience firsthand how Azarus ERP can transform your business operations. 
-              Book a personalized demo with our experts.
+              {t("ctaBand.subtitle")}
             </p>
           </div>
 
@@ -45,7 +47,7 @@ const CTABand = () => {
               className="bg-white text-primary hover:bg-white/90 border-white group"
             >
               <a href="/book-demo">
-                Book a Demo
+                {t("ctaBand.bookDemo")}
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </a>
             </Button>

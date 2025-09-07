@@ -1,0 +1,161 @@
+{
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "features": "Features", 
+    "solutions": "Solutions",
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "bookDemo": "Book a Demo"
+  },
+  "products": {
+    "crm": {
+      "name": "Customer Relationship CRM",
+      "description": "Manage customer relationships and sales pipeline"
+    },
+    "marketing": {
+      "name": "Marketing Automation", 
+      "description": "Automate marketing campaigns and lead nurturing"
+    },
+    "projects": {
+      "name": "Projects Management",
+      "description": "Plan, track and deliver projects efficiently"
+    },
+    "hr": {
+      "name": "HR & Payroll",
+      "description": "Human resources and payroll management"
+    },
+    "finance": {
+      "name": "Finance / Accounting",
+      "description": "Complete financial management solution"
+    },
+    "stock": {
+      "name": "Stock Management",
+      "description": "Inventory and warehouse management"
+    },
+    "assets": {
+      "name": "Assets Management",
+      "description": "Track and manage company assets"
+    },
+    "custom": {
+      "name": "Custom Modules",
+      "description": "Tailored solutions for your business needs"
+    }
+  },
+  "features": {
+    "analytics": "Advanced Analytics",
+    "reporting": "Real-time Reporting",
+    "customization": "Customizability", 
+    "scalability": "Scalability",
+    "security": "Security",
+    "integration": "Integration"
+  },
+  "solutions": {
+    "byNeed": "By Need",
+    "bySector": "By Sector", 
+    "resources": "Resources"
+  },
+  "hero": {
+    "title": "Transform Your Business with Complete ERP Solution",
+    "subtitle": "Streamline operations, boost productivity, and scale your business with our comprehensive ERP platform designed for modern enterprises.",
+    "getStarted": "Get Started Free",
+    "watchDemo": "Watch Demo"
+  },
+  "features_section": {
+    "title": "Why Choose Azarus ERP?",
+    "subtitle": "Discover the powerful features that make Azarus ERP the perfect choice for your business transformation.",
+    "realTimeAnalytics": {
+      "title": "Real-time Analytics",
+      "description": "Get instant insights with comprehensive dashboards and advanced reporting tools that help you make data-driven decisions."
+    },
+    "seamlessIntegration": {
+      "title": "Seamless Integration", 
+      "description": "Connect with your existing tools and systems effortlessly. Our platform supports 100+ integrations out of the box."
+    },
+    "enterpriseSecurity": {
+      "title": "Enterprise Security",
+      "description": "Bank-level security with end-to-end encryption, role-based access control, and compliance with industry standards."
+    },
+    "aiPowered": {
+      "title": "AI-Powered Automation",
+      "description": "Leverage artificial intelligence to automate routine tasks, predict trends, and optimize your business processes."
+    },
+    "customWorkflows": {
+      "title": "Custom Workflows",
+      "description": "Build and customize workflows that match your unique business processes without any coding required."
+    },
+    "support": {
+      "title": "24/7 Expert Support",
+      "description": "Get help when you need it with our dedicated support team available around the clock via chat, email, and phone."
+    }
+  },
+  "valueProps": {
+    "title": "Everything You Need to Succeed",
+    "subtitle": "Our comprehensive ERP solution provides all the tools and features your business needs to thrive in today's competitive market.",
+    "comprehensive": {
+      "title": "Comprehensive Solution",
+      "description": "All-in-one platform covering CRM, finance, HR, inventory, and more"
+    },
+    "scalable": {
+      "title": "Scalable Architecture", 
+      "description": "Grows with your business from startup to enterprise level"
+    },
+    "intuitive": {
+      "title": "Intuitive Interface",
+      "description": "User-friendly design that requires minimal training"
+    },
+    "reliable": {
+      "title": "Reliable & Secure",
+      "description": "99.9% uptime with enterprise-grade security"
+    }
+  },
+  "modules": {
+    "title": "Powerful Modules for Every Department",
+    "subtitle": "Integrated modules that work seamlessly together to power your entire organization"
+  },
+  "footer": {
+    "products": {
+      "title": "Products",
+      "crm": "CRM System",
+      "marketing": "Marketing Automation", 
+      "projects": "Project Management",
+      "hr": "HR & Payroll",
+      "finance": "Finance & Accounting",
+      "inventory": "Inventory Management"
+    },
+    "features": {
+      "title": "Features",
+      "analytics": "Advanced Analytics",
+      "reporting": "Real-time Reporting",
+      "customization": "Customization",
+      "scalability": "Scalability", 
+      "security": "Security & Compliance",
+      "integration": "API Integration"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our newsletter for the latest updates and insights.",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "© 2024 Azarus ERP. All rights reserved."
+  },
+  "ctaBand": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Join thousands of companies already using Azarus ERP to streamline their operations and drive growth.",
+    "getStarted": "Get Started Free",
+    "bookDemo": "Book a Demo"
+  }
+}

@@ -10,31 +10,34 @@ import {
   FileText,
   ShieldCheck
 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Features = () => {
+  const { t } = useTranslation();
+
   const features = [
     {
       icon: Users,
-      title: "Customer & Project Management",
-      description: "Comprehensive task management, invoice generation, and precise time tracking to keep your projects on schedule and profitable.",
+      title: t("features_section.realTimeAnalytics.title"),
+      description: t("features_section.realTimeAnalytics.description"),
       items: ["Task Management", "Invoice Generation", "Time Tracking", "Project Planning"]
     },
     {
       icon: Target,
-      title: "Lead & Sales Management",
-      description: "Streamline your sales pipeline with lead tracking, contract management, and goal monitoring for consistent revenue growth.",
+      title: t("features_section.seamlessIntegration.title"),
+      description: t("features_section.seamlessIntegration.description"),
       items: ["Sales Pipeline", "Contract Management", "Goal Tracking", "Lead Scoring"]
     },
     {
       icon: Headphones,
-      title: "Support & Communication",
-      description: "Integrated ticketing system with automated reminders and company-wide announcements to enhance customer satisfaction.",
+      title: t("features_section.enterpriseSecurity.title"),
+      description: t("features_section.enterpriseSecurity.description"),
       items: ["Ticket System", "Automated Reminders", "Announcements", "Live Chat"]
     },
     {
       icon: Settings,
-      title: "Customization & Multi-functionality",
-      description: "Flexible expense management, surveys, integrated payments, and organized staff resources for complete business control.",
+      title: t("features_section.aiPowered.title"),
+      description: t("features_section.aiPowered.description"),
       items: ["Expense Management", "Survey Tools", "Payment Integration", "Staff Resources"]
     }
   ];
@@ -45,12 +48,10 @@ const Features = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            <span className="text-gradient-blue">Streamlining Business Excellence</span>
+            <span className="text-gradient-blue">{t("features_section.title")}</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Azarus ERP, your ultimate self-hosted ERP solution, aligns with diverse businesses, 
-            freelancers, and professional needs. With a modern design, it enhances your outlook 
-            while accelerating business performance.
+            {t("features_section.subtitle")}
           </p>
         </div>
 

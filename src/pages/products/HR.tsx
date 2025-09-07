@@ -4,7 +4,7 @@ import CTABand from "@/components/CTABand";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Users, UserPlus, Calendar, FileText, Award, TrendingUp } from "lucide-react";
+import { ArrowRight, Play, Users, UserPlus, Calendar, FileText, Award, TrendingUp } from "lucide-react";
 
 const HR = () => {
   const features = [
@@ -78,28 +78,38 @@ const HR = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      {/* Hero Section */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-subtle opacity-50" />
-        <div className="container mx-auto px-4 relative">
-          <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Human Resources Management
-            </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Streamline HR processes, engage employees, and build a thriving workplace culture with comprehensive HR tools.
-            </p>
+       {/* Hero Section */}
+       <section className="section-padding bg-hero-gradient text-white relative overflow-hidden">
+         <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
+         
+         <div className="container-wide relative z-10">
+           <div className="max-w-4xl mx-auto text-center space-y-8">
+             <div className="space-y-4">
+               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                 Human Resources Management
+               </h1>
+               <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                 Streamline HR processes, engage employees, and build a thriving workplace culture with comprehensive HR tools.
+               </p>
+             </div>
+
              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Button asChild size="lg" className="text-lg px-8">
-                 <a href="/book-demo">Book a Demo</a>
+               <Button variant="outline" size="xl" className="bg-white text-primary hover:bg-white/90 border-white group">
+                 <a href="/book-demo" className="flex items-center">
+                   Book a Demo
+                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                 </a>
                </Button>
-               <Button asChild variant="outline" size="lg" className="text-lg px-8">
-                 <a href="/contact">Contact Sales</a>
+               <Button variant="ghost" size="xl" className="text-white border-white/20 hover:bg-white/10 group">
+                 <a href="/contact" className="flex items-center">
+                   <Play className="mr-2 h-4 w-4" />
+                   Contact Sales
+                 </a>
                </Button>
              </div>
-          </div>
-        </div>
-      </section>
+           </div>
+         </div>
+       </section>
 
       {/* Features Section */}
       <section className="py-20">

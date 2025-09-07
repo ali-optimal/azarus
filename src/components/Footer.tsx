@@ -69,18 +69,14 @@ const Footer = () => {
               
               {/* Contact Info */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <Mail className="h-4 w-4 text-brand-orange" />
-                  <span className="text-sm">contact@azarus.com</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="h-4 w-4 text-brand-orange" />
-                  <span className="text-sm">+1 (555) 123-4567</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <MapPin className="h-4 w-4 text-brand-orange" />
-                  <span className="text-sm">123 Business Ave, Tech City</span>
-                </div>
+                 <div className="flex items-center gap-3">
+                   <Mail className="h-4 w-4 text-brand-orange" />
+                   <span className="text-sm">info@azaruserp.com</span>
+                 </div>
+                 <div className="flex items-center gap-3">
+                   <Phone className="h-4 w-4 text-brand-orange" />
+                   <span className="text-sm">+44 1865 60 0679</span>
+                 </div>
               </div>
 
               {/* Social Links */}
@@ -177,9 +173,9 @@ const Footer = () => {
       <div className="py-6">
         <div className="container-wide">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-white/60">
-              © 2024 Azarus ERP. All rights reserved.
-            </p>
+             <p className="text-sm text-white/60">
+               © {new Date().getFullYear()} Azarus ERP. All rights reserved.
+             </p>
             <div className="flex items-center gap-6 text-sm text-white/60">
               <a href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy</a>
               <a href="/legal/terms-of-service" className="hover:text-white transition-colors">Terms</a>

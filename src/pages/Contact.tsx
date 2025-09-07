@@ -98,11 +98,11 @@ const Contact = () => {
                     <div className="p-3 bg-primary/10 rounded-lg">
                       <MessageSquare className="h-6 w-6 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Sales Inquiries</h3>
-                      <p className="text-muted-foreground">Get pricing and product information</p>
-                      <p className="text-primary font-medium">sales@azarus.com</p>
-                    </div>
+                     <div>
+                       <h3 className="font-semibold text-lg">Sales Inquiries</h3>
+                       <p className="text-muted-foreground">Get pricing and product information</p>
+                       <p className="text-primary font-medium">info@azaruserp.com</p>
+                     </div>
                   </div>
                 </Card>
 
@@ -111,11 +111,11 @@ const Contact = () => {
                     <div className="p-3 bg-primary/10 rounded-lg">
                       <Users className="h-6 w-6 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Customer Support</h3>
-                      <p className="text-muted-foreground">Technical support and assistance</p>
-                      <p className="text-primary font-medium">support@azarus.com</p>
-                    </div>
+                     <div>
+                       <h3 className="font-semibold text-lg">Customer Support</h3>
+                       <p className="text-muted-foreground">Technical support and assistance</p>
+                       <p className="text-primary font-medium">info@azaruserp.com</p>
+                     </div>
                   </div>
                 </Card>
 
@@ -124,36 +124,15 @@ const Contact = () => {
                     <div className="p-3 bg-primary/10 rounded-lg">
                       <Phone className="h-6 w-6 text-primary" />
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-lg">Phone Support</h3>
-                      <p className="text-muted-foreground">Monday to Friday, 9 AM - 6 PM EST</p>
-                      <p className="text-primary font-medium">+1 (555) 123-4567</p>
-                    </div>
+                     <div>
+                       <h3 className="font-semibold text-lg">Phone Support</h3>
+                       <p className="text-muted-foreground">Monday to Friday, 9 AM - 6 PM GMT</p>
+                       <p className="text-primary font-medium">+44 1865 60 0679</p>
+                     </div>
                   </div>
                 </Card>
               </div>
 
-              {/* Office Information */}
-              <Card className="p-6">
-                <div className="flex items-start gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-lg mb-2">Headquarters</h3>
-                    <p className="text-muted-foreground mb-4">
-                      123 Business Avenue<br />
-                      Suite 100<br />
-                      New York, NY 10001<br />
-                      United States
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                      <Clock className="h-4 w-4" />
-                      <span>Monday - Friday: 9:00 AM - 6:00 PM EST</span>
-                    </div>
-                  </div>
-                </div>
-              </Card>
 
               {/* Quick Actions */}
               <div className="space-y-4">

@@ -58,17 +58,6 @@ const CTABand = () => {
               Watch Video
             </Button>
           </div>
-
-          {/* Trust Indicators */}
-          <div className="pt-8">
-            <p className="text-sm text-white/70 mb-4">Trusted by industry leaders</p>
-            <div className="flex justify-center items-center gap-8 opacity-60">
-              <div className="text-white/60 font-semibold">TechCorp</div>
-              <div className="text-white/60 font-semibold">InnovateCo</div>
-              <div className="text-white/60 font-semibold">GlobalSoft</div>
-              <div className="text-white/60 font-semibold">DataFlow</div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

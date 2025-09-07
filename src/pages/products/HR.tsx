@@ -89,14 +89,14 @@ const HR = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Streamline HR processes, engage employees, and build a thriving workplace culture with comprehensive HR tools.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="text-lg px-8">
-                Start Free Trial
-              </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8">
-                Schedule Demo
-              </Button>
-            </div>
+             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+               <Button asChild size="lg" className="text-lg px-8">
+                 <a href="/book-demo">Book a Demo</a>
+               </Button>
+               <Button asChild variant="outline" size="lg" className="text-lg px-8">
+                 <a href="/contact">Contact Sales</a>
+               </Button>
+             </div>
           </div>
         </div>
       </section>

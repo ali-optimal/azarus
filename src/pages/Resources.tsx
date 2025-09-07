@@ -4,8 +4,10 @@ import CTABand from "@/components/CTABand";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, BookOpen, FileText, Video, Download, Code, MessageSquare } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const Resources = () => {
+  const { t } = useTranslation();
   const resourceCategories = [
     {
       icon: BookOpen,
@@ -116,10 +118,10 @@ const Resources = () => {
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                Resource Center
+                {t("resources.title")}
               </h1>
               <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                Everything you need to succeed with Azarus ERP - from getting started guides to advanced implementation resources.
+                {t("resources.subtitle")}
               </p>
             </div>
 

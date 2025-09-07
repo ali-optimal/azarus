@@ -4,8 +4,11 @@ import CTABand from "@/components/CTABand";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight, Users, Target, Award, Globe } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
+  const { t } = useTranslation();
+  
   const stats = [
     { number: "500+", label: "Happy Clients" },
     { number: "15+", label: "Years Experience" },
@@ -76,10 +79,10 @@ const About = () => {
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  About Azarus
+                  {t("about.title")}
                 </h1>
                 <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                  We're on a mission to empower businesses of all sizes with intelligent, integrated ERP solutions that drive growth and efficiency.
+                  {t("about.subtitle")}
                 </p>
               </div>
             </div>

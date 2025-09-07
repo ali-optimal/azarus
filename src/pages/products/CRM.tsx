@@ -4,39 +4,186 @@ import CTABand from "@/components/CTABand";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { ArrowRight, Play, Users, Target, BarChart3, MessageCircle, Calendar, FileText } from "lucide-react";
+import { 
+  ArrowRight, 
+  Play, 
+  Users, 
+  Target, 
+  BarChart3, 
+  MessageCircle, 
+  Calendar, 
+  FileText,
+  UserPlus,
+  Eye,
+  Globe,
+  Kanban,
+  Upload,
+  MousePointer,
+  StickyNote,
+  Phone,
+  Bell,
+  Megaphone,
+  Mail,
+  FileCheck,
+  Handshake,
+  Trophy,
+  UserCheck,
+  HelpCircle,
+  BookOpen,
+  MessageSquare,
+  PieChart,
+  TrendingUp,
+  Activity,
+  HeadphonesIcon
+} from "lucide-react";
 
 const CRM = () => {
-  const features = [
+  const coreFeatures = [
     {
+      category: "Customer Management",
       icon: Users,
-      title: "Contact Management",
-      description: "Centralize all customer information, interaction history, and communication preferences in one unified system."
+      features: [
+        {
+          icon: UserPlus,
+          title: "Unlimited Customers & Contacts",
+          description: "Add multiple contacts under each customer (decision makers, accounting, etc.) with no limits."
+        },
+        {
+          icon: Eye,
+          title: "Contact Permissions",
+          description: "Assign specific permissions - view invoices only, view projects only, or custom access levels."
+        },
+        {
+          icon: Globe,
+          title: "Customer Portal",
+          description: "Dedicated portal where clients log in to see invoices, payments, proposals, contracts, project status & support tickets."
+        }
+      ]
     },
     {
+      category: "Leads Management",
       icon: Target,
-      title: "Lead Tracking",
-      description: "Track leads from first contact to conversion with automated scoring and nurturing workflows."
+      features: [
+        {
+          icon: Kanban,
+          title: "Leads Kanban Board",
+          description: "Drag & drop leads across stages for visual pipeline management and better conversion tracking."
+        },
+        {
+          icon: Upload,
+          title: "Import & Sync",
+          description: "Import leads from CSV or email automatically. Sync with external sources for real-time updates."
+        },
+        {
+          icon: MousePointer,
+          title: "Lead Conversion",
+          description: "Convert a lead into a customer with one click, keeping all history (notes, emails, attachments)."
+        },
+        {
+          icon: StickyNote,
+          title: "Lead Notes & Attachments",
+          description: "Save important context, meeting notes, and documents for effective follow-up."
+        }
+      ]
     },
     {
-      icon: BarChart3,
-      title: "Sales Pipeline",
-      description: "Visual pipeline management with customizable stages, forecasting, and performance analytics."
-    },
-    {
+      category: "Communication & Interaction Tracking",
       icon: MessageCircle,
-      title: "Communication Hub",
-      description: "Integrated email, calls, and messaging with automated follow-up reminders and templates."
+      features: [
+        {
+          icon: Activity,
+          title: "Activity Logging",
+          description: "Keep full history of calls, emails, meetings, proposals, and follow-ups per customer/lead."
+        },
+        {
+          icon: Bell,
+          title: "Reminders & Notifications",
+          description: "Assign reminders for calls, meetings, payments. Notify via email or in-app notifications."
+        },
+        {
+          icon: Megaphone,
+          title: "Announcements",
+          description: "Share updates with staff or customers directly inside the portal for better communication."
+        },
+        {
+          icon: Mail,
+          title: "Integrated Email",
+          description: "Send/receive emails linked to customer or lead records with full conversation history."
+        }
+      ]
     },
     {
-      icon: Calendar,
-      title: "Activity Management",
-      description: "Schedule meetings, calls, and tasks with automated reminders and calendar synchronization."
+      category: "Sales & Relationship Tools",
+      icon: FileCheck,
+      features: [
+        {
+          icon: FileText,
+          title: "Proposals & Quotations",
+          description: "Create professional proposals linked to leads/customers that can be accepted electronically."
+        },
+        {
+          icon: Handshake,
+          title: "Contracts Management",
+          description: "Store contracts, set renewal/expiry dates, attach to customer records with automated alerts."
+        },
+        {
+          icon: Trophy,
+          title: "Goals Tracking",
+          description: "Define sales targets (revenue, closed deals) and monitor achievement with progress indicators."
+        },
+        {
+          icon: UserCheck,
+          title: "Referrals Program",
+          description: "Track customer referrals for lead generation and reward programs (if enabled)."
+        }
+      ]
     },
     {
-      icon: FileText,
-      title: "Document Management",
-      description: "Store and organize contracts, proposals, and customer documents with version control."
+      category: "Support & Customer Care",
+      icon: HeadphonesIcon,
+      features: [
+        {
+          icon: HelpCircle,
+          title: "Tickets System",
+          description: "Customers can open support tickets from the portal or via email with automated routing."
+        },
+        {
+          icon: BookOpen,
+          title: "Knowledge Base",
+          description: "Publish articles for self-service support, reducing ticket volume and improving satisfaction."
+        },
+        {
+          icon: MessageSquare,
+          title: "Surveys",
+          description: "Gather customer feedback (NPS, satisfaction, product feedback) with automated campaigns."
+        }
+      ]
+    },
+    {
+      category: "CRM Reporting",
+      icon: BarChart3,
+      features: [
+        {
+          icon: PieChart,
+          title: "Customer Summaries",
+          description: "Overview of each client's financials, interactions, projects, and relationship health."
+        },
+        {
+          icon: TrendingUp,
+          title: "Leads Conversion Reports",
+          description: "Measure efficiency of lead handling, conversion rates, and pipeline performance."
+        },
+        {
+          icon: Phone,
+          title: "Sales Activity Reports",
+          description: "Track calls, meetings, follow-ups linked to customers with performance metrics."
+        },
+        {
+          icon: HeadphonesIcon,
+          title: "Support Reports",
+          description: "Monitor ticket resolution time, customer satisfaction scores, and support team performance."
+        }
+      ]
     }
   ];
 
@@ -111,27 +258,40 @@ const CRM = () => {
          </div>
        </section>
 
-      {/* Features Section */}
+      {/* Core Features Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Powerful CRM Features</h2>
+            <h2 className="text-4xl font-bold mb-4">Core CRM Features</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Everything you need to manage customer relationships and drive sales growth
+              Comprehensive customer relationship management tools designed to grow your business
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-all duration-300">
-                <CardHeader>
-                  <feature.icon className="h-12 w-12 text-primary mb-4" />
-                  <CardTitle className="text-xl">{feature.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-base">{feature.description}</CardDescription>
-                </CardContent>
-              </Card>
+          <div className="space-y-16">
+            {coreFeatures.map((section, sectionIndex) => (
+              <div key={sectionIndex} className="space-y-8">
+                <div className="text-center">
+                  <div className="flex items-center justify-center mb-4">
+                    <section.icon className="h-8 w-8 text-primary mr-3" />
+                    <h3 className="text-2xl font-bold">{section.category}</h3>
+                  </div>
+                </div>
+                
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                  {section.features.map((feature, featureIndex) => (
+                    <Card key={featureIndex} className="group hover:shadow-elegant transition-all duration-300 h-full">
+                      <CardHeader className="pb-4">
+                        <feature.icon className="h-8 w-8 text-primary mb-2" />
+                        <CardTitle className="text-lg leading-tight">{feature.title}</CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-sm leading-relaxed">{feature.description}</CardDescription>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

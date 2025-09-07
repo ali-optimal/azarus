@@ -19,6 +19,20 @@ import Custom from "./pages/products/Custom";
 // Business Pages
 import Pricing from "./pages/Pricing";
 import Contact from "./pages/Contact";
+import BookDemo from "./pages/BookDemo";
+
+// Feature Pages
+import Analytics from "./pages/features/Analytics";
+import Security from "./pages/features/Security";
+
+// Solution Pages
+import ByIndustry from "./pages/solutions/ByIndustry";
+
+// Resource Pages
+import Blog from "./pages/resources/Blog";
+
+// Company Pages
+import About from "./pages/company/About";
 
 const queryClient = new QueryClient();
 
@@ -44,6 +58,20 @@ const App = () => (
           {/* Business Pages */}
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/book-demo" element={<BookDemo />} />
+          
+          {/* Feature Pages */}
+          <Route path="/features/analytics" element={<Analytics />} />
+          <Route path="/features/security" element={<Security />} />
+          
+          {/* Solution Pages */}
+          <Route path="/solutions/by-industry" element={<ByIndustry />} />
+          
+          {/* Resource Pages */}
+          <Route path="/resources/blog" element={<Blog />} />
+          
+          {/* Company Pages */}
+          <Route path="/company/about" element={<About />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

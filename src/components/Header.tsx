@@ -68,9 +68,9 @@ const Header = () => {
               <NavigationMenuContent>
                 <div className="grid gap-3 p-6 w-[500px] lg:w-[600px] lg:grid-cols-2">
                   {products.map((product) => (
-                    <NavigationMenuLink key={product.name} href={product.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                    <NavigationMenuLink key={product.name} href={product.href} className="group block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-brand-navy hover:text-white focus:bg-brand-navy focus:text-white">
                       <div className="text-sm font-medium leading-none">{product.name}</div>
-                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+                      <p className="line-clamp-2 text-sm leading-snug text-muted-foreground group-hover:text-white/90 group-focus:text-white/90">
                         {product.description}
                       </p>
                     </NavigationMenuLink>
@@ -84,7 +84,7 @@ const Header = () => {
               <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[300px] lg:w-[400px]">
                   {features.map((feature) => (
-                    <NavigationMenuLink key={feature.name} href={feature.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                    <NavigationMenuLink key={feature.name} href={feature.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-brand-navy hover:text-white focus:bg-brand-navy focus:text-white">
                       <div className="text-sm font-medium leading-none">{feature.name}</div>
                     </NavigationMenuLink>
                   ))}
@@ -94,10 +94,10 @@ const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>Solutions</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <div className="grid gap-3 p-4 w-[200px]">
+              <NavigationMenuContent className="left-0">
+                <div className="grid gap-3 p-4 w-[280px]">
                   {solutions.map((solution) => (
-                    <NavigationMenuLink key={solution.name} href={solution.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
+                    <NavigationMenuLink key={solution.name} href={solution.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-brand-navy hover:text-white focus:bg-brand-navy focus:text-white">
                       <div className="text-sm font-medium leading-none">{solution.name}</div>
                     </NavigationMenuLink>
                   ))}

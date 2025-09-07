@@ -50,7 +50,7 @@ const Header = () => {
           <img 
             src="/lovable-uploads/bfa528b8-7900-4256-88f1-1888db75bb90.png" 
             alt="Azarus ERP" 
-            className="h-8 w-auto"
+            className="h-12 w-auto"
           />
         </div>
 

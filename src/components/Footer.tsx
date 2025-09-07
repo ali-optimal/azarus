@@ -21,30 +21,30 @@ const Footer = () => {
   ];
 
   const solutionLinks = [
-    { name: "Financial Services", href: "/solutions/financial" },
-    { name: "Manufacturing", href: "/solutions/manufacturing" },
-    { name: "Real Estate", href: "/solutions/real-estate" },
-    { name: "Healthcare", href: "/solutions/healthcare" },
-    { name: "Retail", href: "/solutions/retail" },
-    { name: "Startups", href: "/solutions/startups" }
+    { name: "By Industry", href: "/solutions/by-industry" },
+    { name: "Manufacturing", href: "/solutions/by-industry" },
+    { name: "Healthcare", href: "/solutions/by-industry" },
+    { name: "Financial Services", href: "/solutions/by-industry" },
+    { name: "Retail", href: "/solutions/by-industry" },
+    { name: "Technology", href: "/solutions/by-industry" }
   ];
 
   const resourceLinks = [
-    { name: "Blog", href: "/blog" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "White Papers", href: "/white-papers" },
-    { name: "Documentation", href: "/docs" },
-    { name: "API Reference", href: "/api" },
-    { name: "Release Notes", href: "/releases" }
+    { name: "Blog", href: "/resources/blog" },
+    { name: "Case Studies", href: "/resources/case-studies" },
+    { name: "White Papers", href: "/resources/white-papers" },
+    { name: "Documentation", href: "/resources/documentation" },
+    { name: "API Reference", href: "/resources/documentation" },
+    { name: "Release Notes", href: "/resources/release-notes" }
   ];
 
   const companyLinks = [
-    { name: "About Us", href: "/about" },
-    { name: "Careers", href: "/careers" },
+    { name: "About Us", href: "/company/about" },
+    { name: "Careers", href: "/company/careers" },
     { name: "Contact", href: "/contact" },
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Service", href: "/terms" },
-    { name: "Security", href: "/security" }
+    { name: "Privacy Policy", href: "/legal/privacy-policy" },
+    { name: "Terms of Service", href: "/legal/terms-of-service" },
+    { name: "Security", href: "/features/security" }
   ];
 
   return (
@@ -181,10 +181,10 @@ const Footer = () => {
               © 2024 Azarus ERP. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-white/60">
-              <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
-              <a href="/terms" className="hover:text-white transition-colors">Terms</a>
-              <a href="/cookies" className="hover:text-white transition-colors">Cookies</a>
-              <a href="/sitemap" className="hover:text-white transition-colors">Sitemap</a>
+              <a href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy</a>
+              <a href="/legal/terms-of-service" className="hover:text-white transition-colors">Terms</a>
+              <a href="/contact" className="hover:text-white transition-colors">Contact</a>
+              <a href="/book-demo" className="hover:text-white transition-colors">Book Demo</a>
             </div>
           </div>
         </div>

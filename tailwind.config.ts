@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'inter': ['Inter', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -57,6 +60,23 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Azarus Brand Colors
+        brand: {
+          orange: "hsl(var(--primary-orange))",
+          blue: "hsl(var(--primary-blue))",
+          magenta: "hsl(var(--primary-magenta))",
+          navy: "hsl(var(--primary-navy))",
+        }
+      },
+      boxShadow: {
+        'soft': 'var(--shadow-soft)',
+        'medium': 'var(--shadow-medium)',
+        'large': 'var(--shadow-large)',
+      },
+      backgroundImage: {
+        'hero-gradient': 'var(--hero-gradient)',
+        'card-gradient': 'var(--card-gradient)',
+        'accent-gradient': 'var(--accent-gradient)',
       },
       borderRadius: {
         lg: "var(--radius)",

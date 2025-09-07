@@ -11,6 +11,10 @@ import CRM from "./pages/products/CRM";
 import Marketing from "./pages/products/Marketing";
 import Projects from "./pages/products/Projects";
 import HR from "./pages/products/HR";
+import Finance from "./pages/products/Finance";
+import Assets from "./pages/products/Assets";
+import Stock from "./pages/products/Stock";
+import Custom from "./pages/products/Custom";
 
 // Business Pages
 import Pricing from "./pages/Pricing";
@@ -32,6 +36,10 @@ const App = () => (
           <Route path="/products/marketing" element={<Marketing />} />
           <Route path="/products/projects" element={<Projects />} />
           <Route path="/products/hr" element={<HR />} />
+          <Route path="/products/finance" element={<Finance />} />
+          <Route path="/products/assets" element={<Assets />} />
+          <Route path="/products/stock" element={<Stock />} />
+          <Route path="/products/custom" element={<Custom />} />
           
           {/* Business Pages */}
           <Route path="/pricing" element={<Pricing />} />

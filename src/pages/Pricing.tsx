@@ -191,34 +191,56 @@ const Pricing = () => {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-4 gap-4 bg-card rounded-lg p-6">
-              <div className="font-semibold">Features</div>
-              <div className="text-center font-semibold">Starter</div>
-              <div className="text-center font-semibold">Professional</div>
-              <div className="text-center font-semibold">Enterprise</div>
-
-              {/* Feature rows */}
-              {[
-                { feature: "Users", starter: "5", professional: "25", enterprise: "Unlimited" },
-                { feature: "Storage", starter: "5GB", professional: "50GB", enterprise: "Unlimited" },
-                { feature: "CRM", starter: "✓", professional: "✓", enterprise: "✓" },
-                { feature: "Project Management", starter: "✓", professional: "✓", enterprise: "✓" },
-                { feature: "Marketing Automation", starter: "—", professional: "✓", enterprise: "✓" },
-                { feature: "HR & Payroll", starter: "—", professional: "✓", enterprise: "✓" },
-                { feature: "Advanced Analytics", starter: "—", professional: "✓", enterprise: "✓" },
-                { feature: "API Access", starter: "✓", professional: "✓", enterprise: "✓" },
-                { feature: "Custom Development", starter: "—", professional: "—", enterprise: "✓" },
-                { feature: "SLA Guarantee", starter: "—", professional: "—", enterprise: "✓" }
-              ].map((row, index) => (
-                <div key={index} className="grid grid-cols-4 gap-4 py-3 border-t">
-                  <div>{row.feature}</div>
-                  <div className="text-center">{row.starter}</div>
-                  <div className="text-center">{row.professional}</div>
-                  <div className="text-center">{row.enterprise}</div>
-                </div>
-              ))}
-            </div>
+          <div className="max-w-5xl mx-auto">
+            <Card className="overflow-hidden">
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead>
+                    <tr className="border-b bg-muted/50">
+                      <th className="text-left p-4 font-semibold">Features</th>
+                      <th className="text-center p-4 font-semibold">Starter</th>
+                      <th className="text-center p-4 font-semibold">Professional</th>
+                      <th className="text-center p-4 font-semibold">Enterprise</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {[
+                      { feature: "Users", starter: "5", professional: "25", enterprise: "Unlimited" },
+                      { feature: "Storage", starter: "5GB", professional: "50GB", enterprise: "Unlimited" },
+                      { feature: "CRM", starter: "✓", professional: "✓", enterprise: "✓" },
+                      { feature: "Project Management", starter: "✓", professional: "✓", enterprise: "✓" },
+                      { feature: "Marketing Automation", starter: "—", professional: "✓", enterprise: "✓" },
+                      { feature: "HR & Payroll", starter: "—", professional: "✓", enterprise: "✓" },
+                      { feature: "Advanced Analytics", starter: "—", professional: "✓", enterprise: "✓" },
+                      { feature: "API Access", starter: "✓", professional: "✓", enterprise: "✓" },
+                      { feature: "Custom Development", starter: "—", professional: "—", enterprise: "✓" },
+                      { feature: "SLA Guarantee", starter: "—", professional: "—", enterprise: "✓" },
+                      { feature: "White-label Options", starter: "—", professional: "—", enterprise: "✓" },
+                      { feature: "On-premise Deployment", starter: "—", professional: "—", enterprise: "✓" }
+                    ].map((row, index) => (
+                      <tr key={index} className="border-b hover:bg-muted/30 transition-colors">
+                        <td className="p-4 font-medium">{row.feature}</td>
+                        <td className="p-4 text-center">
+                          <span className={row.starter === "✓" ? "text-green-600" : row.starter === "—" ? "text-muted-foreground" : ""}>
+                            {row.starter}
+                          </span>
+                        </td>
+                        <td className="p-4 text-center">
+                          <span className={row.professional === "✓" ? "text-green-600" : row.professional === "—" ? "text-muted-foreground" : ""}>
+                            {row.professional}
+                          </span>
+                        </td>
+                        <td className="p-4 text-center">
+                          <span className={row.enterprise === "✓" ? "text-green-600" : row.enterprise === "—" ? "text-muted-foreground" : ""}>
+                            {row.enterprise}
+                          </span>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </Card>
           </div>
         </div>
       </section>

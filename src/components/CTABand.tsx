@@ -39,12 +39,15 @@ const CTABand = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
+              asChild
               variant="outline" 
               size="xl" 
               className="bg-white text-primary hover:bg-white/90 border-white group"
             >
-              Book a Demo
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <a href="/book-demo">
+                Book a Demo
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
             <Button 
               variant="ghost" 

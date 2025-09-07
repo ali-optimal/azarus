@@ -90,8 +90,8 @@ const Features = () => {
               <h3 className="font-semibold mb-1">Ready to get started?</h3>
               <p className="text-sm text-muted-foreground">Experience Azarus ERP in action</p>
             </div>
-            <Button variant="hero" size="lg">
-              Book a Demo
+            <Button asChild variant="hero" size="lg">
+              <a href="/book-demo">Book a Demo</a>
             </Button>
           </div>
         </div>

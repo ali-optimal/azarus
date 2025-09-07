@@ -121,11 +121,8 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className="ml-auto flex items-center space-x-4">
-          <Button variant="ghost" className="hidden lg:inline-flex">
-            Sign In
-          </Button>
-          <Button variant="hero" size="lg" className="hidden lg:inline-flex">
-            Book a Demo
+          <Button asChild variant="hero" size="lg" className="hidden lg:inline-flex">
+            <a href="/book-demo">Book a Demo</a>
           </Button>
 
           {/* Mobile Menu */}
@@ -144,8 +141,9 @@ const Header = () => {
                 <a href="/pricing" className="text-lg font-medium">Pricing</a>
                 <a href="/contact" className="text-lg font-medium">Contact</a>
                 <div className="pt-4 space-y-2">
-                  <Button variant="ghost" className="w-full justify-start">Sign In</Button>
-                  <Button variant="hero" className="w-full">Book a Demo</Button>
+                  <Button asChild variant="hero" className="w-full">
+                    <a href="/book-demo">Book a Demo</a>
+                  </Button>
                 </div>
               </nav>
             </SheetContent>

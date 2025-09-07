@@ -41,9 +41,11 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="gradient" size="xl" className="group">
-                Book a Demo
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              <Button asChild variant="gradient" size="xl" className="group">
+                <a href="/book-demo">
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </a>
               </Button>
               <Button variant="outline" size="xl" className="group">
                 <Play className="mr-2 h-4 w-4" />

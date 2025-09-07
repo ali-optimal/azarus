@@ -7,11 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { CheckCircle, Calendar, Users, Zap } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 const BookDemo = () => {
-  const { t } = useTranslation();
-  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -25,10 +22,10 @@ const BookDemo = () => {
             <div className="max-w-4xl mx-auto text-center space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  {t("bookDemo.title")}
+                  See Azarus ERP in Action
                 </h1>
                 <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                  {t("bookDemo.subtitle")}
+                  Book a personalized demo and discover how Azarus ERP can transform your business operations in just 20 minutes.
                 </p>
               </div>
             </div>
@@ -42,9 +39,9 @@ const BookDemo = () => {
               {/* Demo Form */}
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader>
-                  <CardTitle className="text-2xl">{t("bookDemo.scheduleTitle")}</CardTitle>
+                  <CardTitle className="text-2xl">Schedule Your Demo</CardTitle>
                   <CardDescription>
-                    {t("bookDemo.scheduleSubtitle")}
+                    Fill out the form below and we'll get back to you within 24 hours to schedule your personalized demo.
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-6">

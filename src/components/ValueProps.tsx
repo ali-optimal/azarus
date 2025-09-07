@@ -6,43 +6,58 @@ import {
   Shield,
   CheckCircle
 } from "lucide-react";
-import { useTranslation } from "react-i18next";
 
 const ValueProps = () => {
-  const { t } = useTranslation();
-  
   const valueProps = [
     {
       icon: Blocks,
-      title: t("valueProps.modularScalable.title"),
-      description: t("valueProps.modularScalable.description"),
-      benefits: t("valueProps.modularScalable.benefits", { returnObjects: true }) as string[],
+      title: "Modular & Scalable",
+      description: "Choose only the modules you need and scale seamlessly as your business grows.",
+      benefits: [
+        "Pay for what you use",
+        "Easy module activation",
+        "Seamless scaling",
+        "Future-proof architecture"
+      ],
       gradient: "from-brand-blue to-brand-navy"
     },
     {
       icon: Zap,
-      title: t("valueProps.fastDeployment.title"),
-      description: t("valueProps.fastDeployment.description"),
-      benefits: t("valueProps.fastDeployment.benefits", { returnObjects: true }) as string[],
+      title: "Fast Deployment",
+      description: "Get up and running in days, not months, with our streamlined implementation process.",
+      benefits: [
+        "Quick setup process",
+        "Pre-configured templates",
+        "Expert onboarding",
+        "Minimal downtime"
+      ],
       gradient: "from-brand-orange to-brand-magenta"
     },
     {
       icon: Globe,
-      title: t("valueProps.bilingualSupport.title"),
-      description: t("valueProps.bilingualSupport.description"),
-      benefits: t("valueProps.bilingualSupport.benefits", { returnObjects: true }) as string[],
+      title: "Arabic/English Support",
+      description: "Native bilingual support with RTL layout for Arabic and comprehensive localization.",
+      benefits: [
+        "RTL interface design",
+        "Bilingual data entry",
+        "Cultural adaptations",
+        "Local compliance"
+      ],
       gradient: "from-brand-magenta to-brand-blue"
     },
     {
       icon: Shield,
-      title: t("valueProps.secureCompliant.title"),
-      description: t("valueProps.secureCompliant.description"),
-      benefits: t("valueProps.secureCompliant.benefits", { returnObjects: true }) as string[],
+      title: "Secure & Compliant",
+      description: "Enterprise-grade security with compliance standards for data protection and privacy.",
+      benefits: [
+        "Data encryption",
+        "Access controls",
+        "Audit trails",
+        "Compliance ready"
+      ],
       gradient: "from-brand-navy to-brand-orange"
     }
   ];
-
-  const steps = t("valueProps.howItWorks.steps", { returnObjects: true }) as Array<{title: string, description: string}>;
 
   return (
     <section className="section-padding bg-muted/20">
@@ -50,10 +65,11 @@ const ValueProps = () => {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
           <h2 className="text-3xl md:text-4xl font-bold">
-            {t("valueProps.title")} <span className="text-gradient"></span>
+            Why Choose <span className="text-gradient">Azarus ERP?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {t("valueProps.subtitle")}
+            Built with modern technology and designed for businesses that demand flexibility, 
+            security, and rapid deployment.
           </p>
         </div>
 
@@ -94,25 +110,43 @@ const ValueProps = () => {
         {/* Steps Section */}
         <div className="mt-20">
           <h3 className="text-2xl md:text-3xl font-bold text-center mb-12">
-            {t("valueProps.howItWorks.title")} <span className="text-gradient"></span>
+            How It <span className="text-gradient">Works</span>
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-hero-gradient rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto group-hover:scale-110 transition-transform duration-300">
-                    {index + 1}
-                  </div>
-                  {/* Connecting Line */}
-                  {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent -z-10" />
-                  )}
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-hero-gradient rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto group-hover:scale-110 transition-transform duration-300">
+                  1
                 </div>
-                <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-                <p className="text-muted-foreground">{step.description}</p>
+                {/* Connecting Line */}
+                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent -z-10" />
               </div>
-            ))}
+              <h4 className="text-lg font-semibold mb-2">Configure Modules</h4>
+              <p className="text-muted-foreground">Select and customize the modules that match your business needs and workflow requirements.</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="relative mb-6">
+                <div className="w-16 h-16 bg-card-gradient rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto group-hover:scale-110 transition-transform duration-300">
+                  2
+                </div>
+                {/* Connecting Line */}
+                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-primary to-transparent -z-10" />
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Migrate Data</h4>
+              <p className="text-muted-foreground">Seamlessly import your existing data with our guided migration tools and expert support.</p>
+            </div>
+            
+            <div className="text-center group">
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-accent-gradient rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto group-hover:scale-110 transition-transform duration-300">
+                  3
+                </div>
+              </div>
+              <h4 className="text-lg font-semibold mb-2">Go Live & Support</h4>
+              <p className="text-muted-foreground">Launch your ERP system with confidence, backed by comprehensive training and ongoing support.</p>
+            </div>
           </div>
         </div>
       </div>

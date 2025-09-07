@@ -6,9 +6,7 @@
     "solutions": "Solutions",
     "pricing": "Pricing",
     "contact": "Contact",
-    "bookDemo": "Book a Demo",
-    "resources": "Resources",
-    "company": "Company"
+    "bookDemo": "Book a Demo"
   },
   "products": {
     "crm": {
@@ -109,97 +107,55 @@
     "reliable": {
       "title": "Reliable & Secure",
       "description": "99.9% uptime with enterprise-grade security"
-    },
-    "modularScalable": {
-      "title": "Modular & Scalable",
-      "description": "Choose only the modules you need and scale seamlessly as your business grows.",
-      "benefits": [
-        "Pay for what you use",
-        "Easy module activation",
-        "Seamless scaling",
-        "Future-proof architecture"
-      ]
-    },
-    "fastDeployment": {
-      "title": "Fast Deployment",
-      "description": "Get up and running in days, not months, with our streamlined implementation process.",
-      "benefits": [
-        "Quick setup process",
-        "Pre-configured templates",
-        "Expert onboarding",
-        "Minimal downtime"
-      ]
-    },
-    "bilingualSupport": {
-      "title": "Arabic/English Support",
-      "description": "Native bilingual support with RTL layout for Arabic and comprehensive localization.",
-      "benefits": [
-        "RTL interface design",
-        "Bilingual data entry",
-        "Cultural adaptations",
-        "Local compliance"
-      ]
-    },
-    "secureCompliant": {
-      "title": "Secure & Compliant",
-      "description": "Enterprise-grade security with compliance standards for data protection and privacy.",
-      "benefits": [
-        "Data encryption",
-        "Access controls",
-        "Audit trails",
-        "Compliance ready"
-      ]
-    },
-    "howItWorks": {
-      "title": "How It Works",
-      "steps": [
-        {
-          "title": "Configure Modules",
-          "description": "Select and customize the modules that match your business needs and workflow requirements."
-        },
-        {
-          "title": "Migrate Data",
-          "description": "Seamlessly import your existing data with our guided migration tools and expert support."
-        },
-        {
-          "title": "Go Live & Support",
-          "description": "Launch your ERP system with confidence, backed by comprehensive training and ongoing support."
-        }
-      ]
     }
   },
   "modules": {
-    "title": "Complete Business Modules",
-    "subtitle": "Comprehensive ERP modules designed to handle every aspect of your business operations, from customer relationships to financial management.",
-    "customNeed": {
-      "title": "Need Custom Modules?",
-      "subtitle": "Our development team can create specialized modules tailored to your unique business requirements. Get a personalized solution that fits perfectly with your workflow.",
-      "button": "Discuss Custom Development"
-    }
+    "title": "Powerful Modules for Every Department",
+    "subtitle": "Integrated modules that work seamlessly together to power your entire organization"
   },
   "footer": {
-    "tagline": "Empowering businesses with intelligent ERP solutions.",
-    "quickLinks": "Quick Links",
-    "products": "Products",
-    "support": "Support",
-    "company": "Company",
-    "subscribe": "Subscribe to our newsletter",
-    "email": "Enter your email",
-    "subscribeBtn": "Subscribe",
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "rights": "All rights reserved."
+    "products": {
+      "title": "Products",
+      "crm": "CRM System",
+      "marketing": "Marketing Automation", 
+      "projects": "Project Management",
+      "hr": "HR & Payroll",
+      "finance": "Finance & Accounting",
+      "inventory": "Inventory Management"
+    },
+    "features": {
+      "title": "Features",
+      "analytics": "Advanced Analytics",
+      "reporting": "Real-time Reporting",
+      "customization": "Customization",
+      "scalability": "Scalability", 
+      "security": "Security & Compliance",
+      "integration": "API Integration"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "careers": "Careers",
+      "contact": "Contact",
+      "blog": "Blog"
+    },
+    "legal": {
+      "title": "Legal",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "description": "Subscribe to our newsletter for the latest updates and insights.",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe"
+    },
+    "copyright": "© 2024 Azarus ERP. All rights reserved."
   },
-  "resources": {
-    "title": "Resource Center",
-    "subtitle": "Everything you need to succeed with Azarus ERP - from getting started guides to advanced implementation resources.",
-    "browseDoc": "Browse Documentation",
-    "getSupport": "Get Support",
-    "quickAccess": "Quick Access",
-    "quickAccessDesc": "Jump to the most popular resources",
-    "featured": "Featured Resources", 
-    "featuredDesc": "Most popular and recently updated content",
-    "allResources": "All Resources",
-    "allResourcesDesc": "Comprehensive collection of resources organized by category"
+  "ctaBand": {
+    "title": "Ready to Transform Your Business?",
+    "subtitle": "Join thousands of companies already using Azarus ERP to streamline their operations and drive growth.",
+    "getStarted": "Get Started Free",
+    "bookDemo": "Book a Demo"
   }
 }

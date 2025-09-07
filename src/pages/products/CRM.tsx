@@ -4,7 +4,6 @@ import CTABand from "@/components/CTABand";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useTranslation } from "react-i18next";
 import { 
   ArrowRight, 
   Play, 
@@ -39,8 +38,6 @@ import {
 } from "lucide-react";
 
 const CRM = () => {
-  const { t } = useTranslation();
-  
   const coreFeatures = [
     {
       category: "Customer Management",
@@ -234,14 +231,14 @@ const CRM = () => {
          
          <div className="container-wide relative z-10">
            <div className="max-w-4xl mx-auto text-center space-y-8">
-              <div className="space-y-4">
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                  {t("crm.title")}
-                </h1>
-                <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                  {t("crm.subtitle")}
-                </p>
-              </div>
+             <div className="space-y-4">
+               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                 Customer Relationship Management
+               </h1>
+               <p className="text-xl text-white/90 max-w-2xl mx-auto">
+                 Build stronger customer relationships, accelerate sales, and grow your business with our comprehensive CRM solution.
+               </p>
+             </div>
 
              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                <Button variant="outline" size="xl" className="bg-white text-primary hover:bg-white/90 border-white group">

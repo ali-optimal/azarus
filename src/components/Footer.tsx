@@ -20,7 +20,7 @@ const Footer = () => {
     { name: t("footer.products.hr"), href: "/products/hr" },
     { name: t("footer.products.finance"), href: "/products/finance" },
     { name: t("footer.products.inventory"), href: "/products/stock" },
-    { name: t("footer.products.inventory"), href: "/products/assets" }
+    { name: "Assets", href: "/products/assets" }
   ];
 
   const solutionLinks = [
@@ -52,8 +52,43 @@ const Footer = () => {
 
   return (
     <footer className="bg-brand-navy text-white relative z-50">
+      {/* Animated Lines Above Footer */}
+      <div className="absolute top-0 left-0 w-full h-32 overflow-hidden pointer-events-none">
+        <svg className="absolute top-8 left-0 w-full opacity-20" height="100" xmlns="http://www.w3.org/2000/svg">
+          <line x1="0" y1="20" x2="100%" y2="20" stroke="url(#gradient1)" strokeWidth="2">
+            <animate attributeName="x1" from="-100%" to="100%" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="x2" from="0%" to="200%" dur="3s" repeatCount="indefinite" />
+          </line>
+          <line x1="0" y1="40" x2="100%" y2="40" stroke="url(#gradient2)" strokeWidth="2">
+            <animate attributeName="x1" from="-100%" to="100%" dur="4s" repeatCount="indefinite" />
+            <animate attributeName="x2" from="0%" to="200%" dur="4s" repeatCount="indefinite" />
+          </line>
+          <line x1="0" y1="60" x2="100%" y2="60" stroke="url(#gradient3)" strokeWidth="2">
+            <animate attributeName="x1" from="-100%" to="100%" dur="5s" repeatCount="indefinite" />
+            <animate attributeName="x2" from="0%" to="200%" dur="5s" repeatCount="indefinite" />
+          </line>
+          <defs>
+            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#f97316" stopOpacity="0" />
+              <stop offset="50%" stopColor="#f97316" stopOpacity="1" />
+              <stop offset="100%" stopColor="#f97316" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#ec4899" stopOpacity="0" />
+              <stop offset="50%" stopColor="#ec4899" stopOpacity="1" />
+              <stop offset="100%" stopColor="#ec4899" stopOpacity="0" />
+            </linearGradient>
+            <linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#a855f7" stopOpacity="0" />
+              <stop offset="50%" stopColor="#a855f7" stopOpacity="1" />
+              <stop offset="100%" stopColor="#a855f7" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
       {/* Main Footer Content */}
-      <div className="section-padding">
+      <div className="section-padding pt-32">
         <div className="container-wide">
           <div className="grid lg:grid-cols-6 gap-8">
             {/* Company Info */}

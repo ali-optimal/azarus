@@ -6,9 +6,49 @@ const Hero = () => {
   const { t } = useTranslation();
   
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-background to-background/80 section-padding">
+    <section className="relative overflow-hidden bg-transparent section-padding">
       {/* Background Grid */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
+      
+      {/* Geometric Shapes and Lines - Only in Hero Section */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        {/* Animated circles */}
+        <div className="absolute top-20 left-[10%] w-32 h-32 border-2 border-orange-500/40 rounded-full animate-pulse" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-40 right-[15%] w-24 h-24 border-2 border-pink-500/40 rounded-full animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
+        <div className="absolute bottom-32 left-[20%] w-40 h-40 border-2 border-purple-500/35 rounded-full animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+        
+        {/* Geometric triangles */}
+        <div className="absolute top-1/4 right-[8%] w-16 h-16 border-2 border-orange-400/50 rotate-45 animate-spin" style={{ animationDuration: '20s' }} />
+        <div className="absolute bottom-1/3 left-[12%] w-12 h-12 border-2 border-pink-400/50 rotate-12 animate-spin" style={{ animationDuration: '15s', animationDirection: 'reverse' }} />
+        
+        {/* Hexagon shapes */}
+        <div className="absolute top-1/2 right-[25%] opacity-30">
+          <svg width="60" height="60" viewBox="0 0 60 60" className="animate-pulse" style={{ animationDuration: '3s' }}>
+            <polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#f97316" strokeWidth="2"/>
+          </svg>
+        </div>
+        <div className="absolute bottom-20 right-[40%] opacity-30">
+          <svg width="40" height="40" viewBox="0 0 60 60" className="animate-pulse" style={{ animationDuration: '4s', animationDelay: '1s' }}>
+            <polygon points="30,5 55,17.5 55,42.5 30,55 5,42.5 5,17.5" fill="none" stroke="#db2777" strokeWidth="2"/>
+          </svg>
+        </div>
+        
+        {/* Dots pattern */}
+        <div className="absolute top-[15%] left-[5%] grid grid-cols-3 gap-3 opacity-40">
+          {[...Array(9)].map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 bg-gradient-to-r from-orange-500 to-pink-500 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s`, animationDuration: '2s' }} />
+          ))}
+        </div>
+        <div className="absolute bottom-[20%] right-[5%] grid grid-cols-3 gap-3 opacity-40">
+          {[...Array(9)].map((_, i) => (
+            <div key={i} className="w-1.5 h-1.5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full animate-pulse" style={{ animationDelay: `${i * 0.2}s`, animationDuration: '2s' }} />
+          ))}
+        </div>
+        
+        {/* Plus symbols */}
+        <div className="absolute top-[30%] left-[25%] text-2xl font-thin text-orange-400/50 animate-pulse" style={{ animationDuration: '2s' }}>+</div>
+        <div className="absolute bottom-[35%] right-[18%] text-2xl font-thin text-pink-400/50 animate-pulse" style={{ animationDuration: '2.5s', animationDelay: '0.5s' }}>+</div>
+      </div>
       
       <div className="container-wide relative">
         {/* Invisible placeholder duplicates hero layout to preserve margins/padding */}
@@ -37,7 +77,7 @@ const Hero = () => {
         </div>
 
         {/* fixed hero: stays visible while next content scrolls above (next section needs higher z) */}
-        <div className="fixed inset-x-0 top-0 z-10 bg-gradient-to-b from-background to-background">
+        <div className="fixed inset-x-0 top-0 z-10 bg-transparent">
           <div className="container-wide section-padding">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Content */}

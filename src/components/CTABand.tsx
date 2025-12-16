@@ -7,6 +7,13 @@ const CTABand = () => {
   
   return (
     <section className="section-padding bg-hero-gradient text-white relative overflow-hidden">
+      {/* Wavy White Shape at Top */}
+      <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
+        <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <path d="M0,0 C150,80 350,80 600,40 C850,0 1050,0 1200,60 L1200,0 L0,0 Z" fill="#ffffff"></path>
+        </svg>
+      </div>
+      
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
       

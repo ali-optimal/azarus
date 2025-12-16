@@ -1,3 +1,4 @@
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABand from "@/components/CTABand";
@@ -226,41 +227,80 @@ const CRM = () => {
       <Header />
       
        {/* Hero Section */}
-       <section className="section-padding bg-hero-gradient text-white relative overflow-hidden">
-         <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
+       <section className="section-padding relative overflow-hidden" style={{
+         background: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 25%, #7c3aed 50%, #ec4899 75%, #f97316 100%)'
+       }}>
+         {/* Animated stars/sparkles effect */}
+         <div className="absolute inset-0 overflow-hidden">
+           {[...Array(50)].map((_, i) => (
+             <div
+               key={i}
+               className="absolute w-1 h-1 bg-white rounded-full animate-pulse"
+               style={{
+                 top: `${Math.random() * 100}%`,
+                 left: `${Math.random() * 100}%`,
+                 animationDelay: `${Math.random() * 3}s`,
+                 animationDuration: `${2 + Math.random() * 2}s`,
+                 opacity: Math.random() * 0.7 + 0.3
+               }}
+             />
+           ))}
+         </div>
+         
+         {/* Grid overlay */}
+         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
          
          <div className="container-wide relative z-10">
-           <div className="max-w-4xl mx-auto text-center space-y-8">
-             <div className="space-y-4">
-               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                 Customer Relationship Management
-               </h1>
-               <p className="text-xl text-white/90 max-w-2xl mx-auto">
-                 Build stronger customer relationships, accelerate sales, and grow your business with our comprehensive CRM solution.
-               </p>
+           <div className="grid lg:grid-cols-2 gap-12 items-center">
+             {/* Left Content */}
+             <div className="space-y-8 text-white">
+               <div className="space-y-4">
+                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+                   Customer Relationship Management
+                 </h1>
+                 <p className="text-xl text-white/90">
+                   Build stronger customer relationships, accelerate sales, and grow your business with our comprehensive CRM solution.
+                 </p>
+               </div>
+
+               <div className="flex flex-col sm:flex-row gap-4">
+                 <Button size="lg" className="bg-white text-blue-600 hover:bg-white/90 font-semibold group">
+                   <a href="/book-demo" className="flex items-center">
+                     Get Started
+                   </a>
+                 </Button>
+                 <Button size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-purple-600 transition-all group">
+                   <a href="/contact" className="flex items-center">
+                     <Play className="mr-2 h-4 w-4" />
+                     Contact Sales
+                   </a>
+                 </Button>
+               </div>
              </div>
 
-             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-               <Button variant="outline" size="xl" className="bg-white text-primary hover:bg-white/90 border-white group">
-                 <a href="/book-demo" className="flex items-center">
-                   Book a Demo
-                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                 </a>
-               </Button>
-               <Button variant="ghost" size="xl" className="text-white border-white/20 hover:bg-white/10 group">
-                 <a href="/contact" className="flex items-center">
-                   <Play className="mr-2 h-4 w-4" />
-                   Contact Sales
-                 </a>
-               </Button>
+             {/* Right Content - Lottie Animation */}
+             <div className="relative lg:scale-125">
+               <DotLottieReact
+                 src="https://lottie.host/8d481cac-b133-4fa0-9fbd-96d5e6c6f3f7/t5Rt9ZWpSr.lottie"
+                 loop
+                 autoplay
+                 className="w-full h-auto"
+               />
              </div>
            </div>
+         </div>
+         
+         {/* Wavy bottom edge */}
+         <div className="absolute bottom-0 left-0 right-0 -mb-px">
+           <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-auto" preserveAspectRatio="none">
+             <path d="M0,32 C360,10 720,10 1080,32 C1260,43 1350,48 1440,48 L1440,60 L0,60 Z" fill="white" stroke="white"/>
+           </svg>
          </div>
        </section>
 
       {/* Core Features Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
+        <div className="max-w-[1680px] mx-auto px-20">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Core CRM Features</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -268,29 +308,127 @@ const CRM = () => {
             </p>
           </div>
           
-          <div className="space-y-16">
+          <div className="space-y-24">
             {coreFeatures.map((section, sectionIndex) => (
               <div key={sectionIndex} className="space-y-8">
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-4">
-                    <section.icon className="h-8 w-8 text-primary mr-3" />
-                    <h3 className="text-2xl font-bold">{section.category}</h3>
+                {/* Customer Management Section - Special Design with Image */}
+                {section.category === "Customer Management" ? (
+                  <div className="relative">
+                    {/* Gradient background */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-purple-50 to-pink-50 rounded-3xl -z-10" />
+                    
+                    <div className="grid lg:grid-cols-[1.2fr_1fr] gap-8 lg:gap-12 items-center p-6 lg:p-12">
+                      {/* Left: Image with 3D Effect - Larger */}
+                      <div className="relative group" style={{ perspective: '2000px' }}>
+                        <div 
+                          className="relative rounded-2xl overflow-hidden shadow-[0_35px_60px_-15px_rgba(0,0,0,0.5)] transform transition-all duration-700 group-hover:shadow-[0_45px_80px_-15px_rgba(0,0,0,0.6)]"
+                          style={{
+                            transform: 'perspective(2000px) rotateY(8deg) rotateX(3deg) translateZ(40px)',
+                            transformStyle: 'preserve-3d',
+                            backfaceVisibility: 'hidden',
+                            WebkitBackfaceVisibility: 'hidden',
+                          }}
+                          onMouseMove={(e) => {
+                            const rect = e.currentTarget.getBoundingClientRect();
+                            const x = e.clientX - rect.left;
+                            const y = e.clientY - rect.top;
+                            const centerX = rect.width / 2;
+                            const centerY = rect.height / 2;
+                            const rotateX = (y - centerY) / 20;
+                            const rotateY = (centerX - x) / 20;
+                            e.currentTarget.style.transform = `perspective(2000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(40px)`;
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.transform = 'perspective(2000px) rotateY(8deg) rotateX(3deg) translateZ(40px)';
+                          }}
+                        >
+                          <img
+                            src="/CRM%20customers%20page%20-%20Copy.png"
+                            alt="CRM Customer Management Dashboard"
+                            className="w-full h-auto"
+                            loading="eager"
+                            style={{
+                              backfaceVisibility: 'hidden',
+                              WebkitBackfaceVisibility: 'hidden',
+                              transform: 'translateZ(0)',
+                            }}
+                          />
+                        </div>
+                      </div>
+
+                      {/* Right: Features */}
+                      <div className="space-y-6">
+                        <div className="flex items-center gap-3 mb-6">
+                          <div className="p-3 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl">
+                            <section.icon className="h-8 w-8 text-white" />
+                          </div>
+                          <h3 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                            {section.category}
+                          </h3>
+                        </div>
+                        
+                        <div className="grid gap-4">
+                          {section.features.map((feature, featureIndex) => (
+                            <div
+                              key={featureIndex}
+                              className="group relative bg-white rounded-xl p-5 border-2 border-gray-100 hover:border-purple-200 hover:shadow-lg transition-all duration-300"
+                            >
+                              <div className="flex items-start gap-4">
+                                <div className="flex-shrink-0 p-2 bg-gradient-to-br from-blue-100 to-purple-100 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                                  <feature.icon className="h-6 w-6 text-purple-600" />
+                                </div>
+                                <div className="flex-1">
+                                  <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-purple-600 transition-colors">
+                                    {feature.title}
+                                  </h4>
+                                  <p className="text-sm text-gray-600 leading-relaxed">
+                                    {feature.description}
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {section.features.map((feature, featureIndex) => (
-                    <Card key={featureIndex} className="group hover:shadow-elegant transition-all duration-300 h-full">
-                      <CardHeader className="pb-4">
-                        <feature.icon className="h-8 w-8 text-primary mb-2" />
-                        <CardTitle className="text-lg leading-tight">{feature.title}</CardTitle>
-                      </CardHeader>
-                      <CardContent>
-                        <CardDescription className="text-sm leading-relaxed">{feature.description}</CardDescription>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                ) : (
+                  /* Other sections - Enhanced Card Design */
+                  <>
+                    <div className="text-center">
+                      <div className="flex items-center justify-center mb-4">
+                        <div className="p-3 bg-gradient-to-br from-orange-500 to-pink-600 rounded-xl mr-3">
+                          <section.icon className="h-6 w-6 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold">{section.category}</h3>
+                      </div>
+                    </div>
+                    
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                      {section.features.map((feature, featureIndex) => (
+                        <Card 
+                          key={featureIndex} 
+                          className="group relative bg-white hover:shadow-2xl transition-all duration-300 h-full border-2 border-gray-100 hover:border-orange-200 overflow-hidden"
+                        >
+                          <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-orange-500/10 to-pink-600/10 rounded-bl-full transform translate-x-8 -translate-y-8 group-hover:scale-150 transition-transform duration-500" />
+                          <CardHeader className="pb-4 relative z-10">
+                            <div className="p-2 bg-gradient-to-br from-orange-100 to-pink-100 rounded-lg w-fit mb-3 group-hover:scale-110 transition-transform duration-300">
+                              <feature.icon className="h-6 w-6 text-orange-600" />
+                            </div>
+                            <CardTitle className="text-lg leading-tight group-hover:text-orange-600 transition-colors">
+                              {feature.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="relative z-10">
+                            <CardDescription className="text-sm leading-relaxed">
+                              {feature.description}
+                            </CardDescription>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </>
+                )}
               </div>
             ))}
           </div>

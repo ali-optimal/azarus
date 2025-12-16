@@ -51,7 +51,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-brand-navy text-white">
+    <footer className="bg-brand-navy text-white relative z-50">
       {/* Main Footer Content */}
       <div className="section-padding">
         <div className="container-wide">

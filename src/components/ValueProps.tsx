@@ -60,7 +60,7 @@ const ValueProps = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/20">
+    <section className="section-padding bg-background">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -76,7 +76,7 @@ const ValueProps = () => {
         {/* Value Props Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {valueProps.map((prop, index) => (
-            <Card key={index} className="group relative overflow-hidden border-0 bg-background/60 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
+            <Card key={index} className="group relative overflow-hidden border-0 bg-background hover:shadow-xl transition-all duration-300">
               {/* Gradient Overlay */}
               <div className={`absolute inset-0 bg-gradient-to-br ${prop.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300`} />
               

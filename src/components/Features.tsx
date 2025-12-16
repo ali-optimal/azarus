@@ -43,7 +43,7 @@ const Features = () => {
   ];
 
   return (
-    <section className="section-padding bg-muted/30">
+    <section className="section-padding bg-background">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -58,7 +58,7 @@ const Features = () => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/60 backdrop-blur-sm">
+            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-0 bg-background">
               <CardHeader className="space-y-4">
                 <div className="flex items-center gap-4">
                   <div className="rounded-xl bg-hero-gradient p-3 text-white group-hover:scale-110 transition-transform duration-300">

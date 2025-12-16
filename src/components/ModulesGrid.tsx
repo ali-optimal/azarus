@@ -90,7 +90,7 @@ const ModulesGrid = () => {
   ];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-background">
       <div className="container-wide">
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16">
@@ -107,7 +107,7 @@ const ModulesGrid = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {modules.map((module, index) => (
             <a key={index} href={module.href} className="block">
-              <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card/50 backdrop-blur-sm card-hover h-full">
+              <Card className="group hover:shadow-xl transition-all duration-300 border-0 bg-card card-hover h-full">
                 <CardHeader>
                   <div className="flex items-start justify-between">
                     <div className={`rounded-xl bg-gradient-to-r ${module.color} p-3 text-white group-hover:scale-110 transition-transform duration-300`}>

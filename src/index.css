@@ -167,6 +167,22 @@
   .section-padding {
     @apply py-16 lg:py-24;
   }
+
+  /* Diagonal top transparency utility: uses a ::before pseudo element so content stays above the mask */
+  .bg-diagonal-top-transparent {
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+  }
+  .bg-diagonal-top-transparent::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    /* transparent at the top-left-to-bottom-right diagonal portion near the top */
+    background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,1) 55%, rgba(255,255,255,1) 100%);
+    pointer-events: none;
+  }
 }
 
 /* RTL Support */

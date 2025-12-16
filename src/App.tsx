@@ -3,9 +3,10 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useImagePreload } from "@/hooks/use-image-preload";
+import Loader from "@/components/Loader";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -57,6 +58,8 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const { i18n } = useTranslation();
+  // Show loader only on initial page load/reload, not on route changes
+  const [isLoading, setIsLoading] = useState(true);
   
   // Preload all images on app initialization
   useImagePreload();
@@ -68,7 +71,16 @@ const AppContent = () => {
     document.documentElement.lang = i18n.language;
   }, [i18n.language]);
 
+  const handleLoadComplete = () => {
+    setIsLoading(false);
+  };
+
+  if (isLoading) {
+    return <Loader onLoadComplete={handleLoadComplete} />;
+  }
+
   return (
+    <div className="animate-in fade-in duration-500">
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
@@ -121,6 +133,7 @@ const AppContent = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
+    </div>
   );
 };
 

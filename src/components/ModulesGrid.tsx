@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { 
   Users, 
   Calculator, 
@@ -15,6 +15,40 @@ import {
 
 const ModulesGrid = () => {
   const [activeTab, setActiveTab] = useState("crm");
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload all tab images when component mounts
+  useEffect(() => {
+    const imagesToPreload = [
+      "/CRM customers page.png",
+      "/accounting dashboard final.png",
+      "/HR Dashboard final.png",
+      "/Payroll main page final.png",
+      "/ChatGPT Image Dec 16, 2025, 04_06_53 AM.png",
+      "/assets main page (1).png",
+      "/stock main page.png",
+      "/campaign main image.png",
+      "/frm builder (1).png"
+    ];
+
+    const preloadImages = imagesToPreload.map((src) => {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.src = encodeURI(src);
+        img.onload = resolve;
+        img.onerror = reject;
+      });
+    });
+
+    Promise.all(preloadImages)
+      .then(() => {
+        setImagesLoaded(true);
+      })
+      .catch((err) => {
+        console.error("Error preloading images:", err);
+        setImagesLoaded(true); // Continue anyway
+      });
+  }, []);
 
   const modules = [
     {
@@ -247,6 +281,9 @@ const ModulesGrid = () => {
                           ""
                         }
                         alt={`${module.fullTitle} Dashboard`}
+                        loading="eager"
+                        decoding="async"
+                        fetchpriority="high"
                         className="w-full h-auto max-w-none animate-in fade-in slide-in-from-right-8 duration-700"
                         style={{
                           transform: 'perspective(1000px) rotateY(0deg)',

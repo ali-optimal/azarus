@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
+import { useImagePreload } from "@/hooks/use-image-preload";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -56,6 +57,9 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const { i18n } = useTranslation();
+  
+  // Preload all images on app initialization
+  useImagePreload();
 
   useEffect(() => {
     // Set document direction and lang based on current language

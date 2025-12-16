@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Hero from "@/components/Hero";
 import Header from "@/components/Header";
 import Features from "@/components/Features";
@@ -7,6 +8,12 @@ import CTABand from "@/components/CTABand";
 import Footer from "@/components/Footer";
 
 const Index = () => {
+  // Preload dashboard image
+  useEffect(() => {
+    const img = new Image();
+    img.src = encodeURI("/Dashboard edited final.png");
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -43,6 +50,9 @@ const Index = () => {
                 <img
                   src={encodeURI("/Dashboard edited final.png")}
                   alt="Dashboard"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
                   className="w-full max-w-5xl rounded-xl relative z-10 dashboard-image"
                   id="dashboard-img"
                 />

@@ -61,6 +61,9 @@ const Header = () => {
           <img 
             src="/lovable-uploads/bfa528b8-7900-4256-88f1-1888db75bb90.png" 
             alt="Azarus ERP" 
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
             className="h-12 w-auto"
           />
         </div>

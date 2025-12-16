@@ -127,6 +127,9 @@ const Hero = () => {
                 <img
                   src={encodeURI("/ChatGPT Image Dec 15, 2025, 11_10_33 PM (1).png")}
                   alt="Phone mockups"
+                  loading="eager"
+                  decoding="async"
+                  fetchpriority="high"
                   className="w-full max-w-2xl rounded-2xl"
                 />
               </div>

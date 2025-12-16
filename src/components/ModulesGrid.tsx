@@ -196,8 +196,7 @@ const ModulesGrid = () => {
 
                   <Button 
                     size="default"
-                    className="w-full sm:w-auto group lg:size-lg" 
-                    className="group"
+                    className="w-full sm:w-auto group lg:size-lg"
                     asChild
                   >
                     <a href={module.href}>

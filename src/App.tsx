@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useImagePreload } from "@/hooks/use-image-preload";
 import Loader from "@/components/Loader";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 
@@ -58,8 +59,11 @@ const queryClient = new QueryClient();
 
 const AppContent = () => {
   const { i18n } = useTranslation();
-  // Show loader only on initial page load/reload, not on route changes
-  const [isLoading, setIsLoading] = useState(true);
+  // Show loader only on very first load of the website
+  const [isLoading, setIsLoading] = useState(() => {
+    // Check if we've already shown the loader in this session
+    return !sessionStorage.getItem('loaderShown');
+  });
   
   // Preload all images on app initialization
   useImagePreload();
@@ -73,6 +77,8 @@ const AppContent = () => {
 
   const handleLoadComplete = () => {
     setIsLoading(false);
+    // Mark loader as shown in this session
+    sessionStorage.setItem('loaderShown', 'true');
   };
 
   if (isLoading) {
@@ -82,6 +88,7 @@ const AppContent = () => {
   return (
     <div className="animate-in fade-in duration-500">
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Index />} />
         

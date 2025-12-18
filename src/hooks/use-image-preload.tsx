@@ -15,6 +15,7 @@ export const useImagePreload = () => {
       
       // Module/Tab images
       "/CRM customers page.png",
+      "/customers 3d done.png",
       "/accounting dashboard final.png",
       "/HR Dashboard final.png",
       "/Payroll main page final.png",

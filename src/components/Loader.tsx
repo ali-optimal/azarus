@@ -19,6 +19,7 @@ const Loader = ({ onLoadComplete }: LoaderProps) => {
       
       // Module/Tab images
       "/CRM customers page.png",
+      "/customers 3d done.png",
       "/accounting dashboard final.png",
       "/HR Dashboard final.png",
       "/Payroll main page final.png",
@@ -197,40 +198,6 @@ const Loader = ({ onLoadComplete }: LoaderProps) => {
           height: 100%;
           object-fit: contain;
           position: relative;
-        }
-
-        /* Shimmer sweep effect */
-        .logo-3d::before {
-          content: '';
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: linear-gradient(
-            45deg,
-            transparent 0%,
-            transparent 45%,
-            rgba(255, 255, 255, 0.3) 50%,
-            transparent 55%,
-            transparent 100%
-          );
-          animation: shimmerSweep 4s ease-in-out infinite;
-          pointer-events: none;
-        }
-
-        @keyframes shimmerSweep {
-          0% {
-            transform: translateX(-100%) translateY(-100%) rotate(45deg);
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            transform: translateX(100%) translateY(100%) rotate(45deg);
-            opacity: 0;
-          }
         }
       `}</style>
     </div>

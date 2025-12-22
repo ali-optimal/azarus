@@ -173,21 +173,21 @@ const BySector = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mx-[100px]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 max-w-7xl mx-auto">
             {sectors.map((sector, index) => (
               <Card key={index} className="hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border-2 border-orange-300 hover:border-pink-500 overflow-hidden bg-white">
                 <CardHeader className="space-y-6">
-                  <div className="flex items-start justify-between">
-                    <div className="flex-1">
+                  <div className="flex flex-col sm:flex-row items-start justify-between gap-4">
+                    <div className="flex-1 w-full">
                       <div className="w-16 h-16 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl flex items-center justify-center mb-4">
                         <sector.icon className="h-8 w-8 text-white" />
                       </div>
-                      <CardTitle className="text-2xl md:text-3xl mb-3">{sector.title}</CardTitle>
-                      <CardDescription className="text-base leading-relaxed">
+                      <CardTitle className="text-xl sm:text-2xl md:text-3xl mb-3">{sector.title}</CardTitle>
+                      <CardDescription className="text-sm sm:text-base leading-relaxed">
                         {sector.description}
                       </CardDescription>
                     </div>
-                    <div className="w-40 h-40 flex-shrink-0 ml-4">
+                    <div className="w-32 h-32 sm:w-40 sm:h-40 flex-shrink-0 mx-auto sm:mx-0 sm:ml-4">
                       <DotLottieReact
                         src={sector.animationUrl}
                         loop
@@ -197,36 +197,36 @@ const BySector = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="bg-gradient-to-br from-orange-50/50 to-pink-50/50 rounded-xl p-5">
-                    <h4 className="font-semibold text-lg mb-3 text-orange-900">How Our System Works in {sector.title}</h4>
-                    <p className="text-sm text-gray-700 leading-relaxed">
+                <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+                  <div className="bg-gradient-to-br from-orange-50/50 to-pink-50/50 rounded-xl p-3 sm:p-5">
+                    <h4 className="font-semibold text-base sm:text-lg mb-2 sm:mb-3 text-orange-900">How Our System Works in {sector.title}</h4>
+                    <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
                       {sector.usageContent}
                     </p>
                   </div>
                   
                   <div>
-                    <h4 className="font-semibold text-lg mb-4 flex items-center gap-2">
-                      <span className="w-1 h-6 bg-gradient-to-b from-orange-500 to-pink-500 rounded-full"></span>
+                    <h4 className="font-semibold text-base sm:text-lg mb-3 sm:mb-4 flex items-center gap-2">
+                      <span className="w-1 h-4 sm:h-6 bg-gradient-to-b from-orange-500 to-pink-500 rounded-full"></span>
                       Key Capabilities
                     </h4>
-                    <ul className="grid grid-cols-1 gap-3">
+                    <ul className="grid grid-cols-1 gap-2 sm:gap-3">
                       {sector.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-3 group">
+                        <li key={featureIndex} className="flex items-start gap-2 sm:gap-3 group">
                           <div className="w-2 h-2 bg-gradient-to-br from-orange-500 to-pink-500 rounded-full mt-1.5 flex-shrink-0 group-hover:scale-150 transition-transform" />
-                          <span className="text-sm text-gray-700 group-hover:text-gray-900 transition-colors font-medium">{feature}</span>
+                          <span className="text-xs sm:text-sm text-gray-700 group-hover:text-gray-900 transition-colors font-medium">{feature}</span>
                         </li>
                       ))}
                     </ul>
                   </div>
                   
-                  <div className="pt-4 border-t-2 border-gradient-to-r from-purple-100 to-blue-100">
-                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-4 border border-green-200">
-                      <div className="flex items-start gap-3">
-                        <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-white text-sm font-bold">✓</span>
+                  <div className="pt-3 sm:pt-4 border-t-2 border-gradient-to-r from-purple-100 to-blue-100">
+                    <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-3 sm:p-4 border border-green-200">
+                      <div className="flex items-start gap-2 sm:gap-3">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <span className="text-white text-xs sm:text-sm font-bold">✓</span>
                         </div>
-                        <p className="text-green-800 font-semibold text-sm leading-relaxed">
+                        <p className="text-green-800 font-semibold text-xs sm:text-sm leading-relaxed">
                           {sector.benefits}
                         </p>
                       </div>

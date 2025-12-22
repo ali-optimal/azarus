@@ -108,7 +108,7 @@ const Header = () => {
 
             <NavigationMenuItem>
               <NavigationMenuTrigger>{t("nav.solutions")}</NavigationMenuTrigger>
-              <NavigationMenuContent className="left-0">
+              <NavigationMenuContent>
                 <div className="grid gap-3 p-4 w-[280px]">
                   {solutions.map((solution) => (
                     <NavigationMenuLink key={solution.name} href={solution.href} className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-brand-navy hover:text-white focus:bg-brand-navy focus:text-white">

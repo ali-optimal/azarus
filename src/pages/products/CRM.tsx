@@ -1,4 +1,5 @@
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { motion } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import CTABand from "@/components/CTABand";
@@ -1033,7 +1034,7 @@ const CRM = () => {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-orange-200/30 to-pink-200/30 rounded-full blur-3xl" />
         </div>
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           <div className="text-center mb-20">
             <div className="inline-block mb-4">
               <span className="px-4 py-2 bg-gradient-to-r from-orange-500 to-pink-600 text-white rounded-full text-sm font-semibold shadow-lg">
@@ -1103,7 +1104,7 @@ const CRM = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-gradient-to-br from-cyan-200/15 to-blue-200/15 rounded-full blur-3xl" />
         </div>
         
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           <div className="text-center mb-20">
             <div className="inline-block mb-4">
               <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white rounded-full text-sm font-semibold shadow-lg">
@@ -1200,7 +1201,7 @@ const CRM = () => {
 
       {/* FAQ Section */}
       <section className="py-20 bg-muted/30">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-4">Frequently Asked Questions</h2>
           </div>

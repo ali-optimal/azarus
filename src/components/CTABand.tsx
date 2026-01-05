@@ -6,7 +6,7 @@ const CTABand = () => {
   const { t } = useTranslation();
   
   return (
-    <section className="section-padding bg-hero-gradient text-white relative overflow-hidden">
+    <section className="section-padding pt-16 bg-hero-gradient text-white relative overflow-hidden">
       {/* Wavy White Shape at Top */}
       <div className="absolute top-0 left-0 w-full overflow-hidden leading-none">
         <svg className="relative block w-full h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

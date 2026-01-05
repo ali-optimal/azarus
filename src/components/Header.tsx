@@ -9,14 +9,18 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Languages } from "lucide-react";
+import { Menu, Languages, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [productsOpen, setProductsOpen] = useState(false);
+  const [featuresOpen, setFeaturesOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
   const { t, i18n } = useTranslation();
 
   const isRTL = i18n.language === 'ar';
@@ -54,7 +58,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="fixed top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container-wide flex h-16 items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">
@@ -171,12 +175,71 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent side={isRTL ? "left" : "right"} className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-8">
-                <a href="/" className="text-lg font-medium">{t("nav.home")}</a>
-                <a href="/products" className="text-lg font-medium">{t("nav.products")}</a>
-                <a href="/features" className="text-lg font-medium">{t("nav.features")}</a>
-                <a href="/solutions" className="text-lg font-medium">{t("nav.solutions")}</a>
-                <a href="/pricing" className="text-lg font-medium">{t("nav.pricing")}</a>
-                <a href="/contact" className="text-lg font-medium">{t("nav.contact")}</a>
+                <a href="/" className="text-lg font-medium hover:text-primary transition-colors">{t("nav.home")}</a>
+                
+                {/* Products Collapsible */}
+                <Collapsible open={productsOpen} onOpenChange={setProductsOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium hover:text-primary transition-colors">
+                    <span>{t("nav.products")}</span>
+                    <ChevronDown className={cn("h-4 w-4 transition-transform duration-300", productsOpen && "rotate-180")} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 ml-4 space-y-2 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2">
+                    {products.map((product) => (
+                      <a 
+                        key={product.name} 
+                        href={product.href} 
+                        className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {product.name}
+                      </a>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Features Collapsible */}
+                <Collapsible open={featuresOpen} onOpenChange={setFeaturesOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium hover:text-primary transition-colors">
+                    <span>{t("nav.features")}</span>
+                    <ChevronDown className={cn("h-4 w-4 transition-transform duration-300", featuresOpen && "rotate-180")} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 ml-4 space-y-2 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2">
+                    {features.map((feature) => (
+                      <a 
+                        key={feature.name} 
+                        href={feature.href} 
+                        className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {feature.name}
+                      </a>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                {/* Solutions Collapsible */}
+                <Collapsible open={solutionsOpen} onOpenChange={setSolutionsOpen}>
+                  <CollapsibleTrigger className="flex items-center justify-between w-full text-lg font-medium hover:text-primary transition-colors">
+                    <span>{t("nav.solutions")}</span>
+                    <ChevronDown className={cn("h-4 w-4 transition-transform duration-300", solutionsOpen && "rotate-180")} />
+                  </CollapsibleTrigger>
+                  <CollapsibleContent className="mt-2 ml-4 space-y-2 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:slide-out-to-top-2 data-[state=open]:slide-in-from-top-2">
+                    {solutions.map((solution) => (
+                      <a 
+                        key={solution.name} 
+                        href={solution.href} 
+                        className="block py-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {solution.name}
+                      </a>
+                    ))}
+                  </CollapsibleContent>
+                </Collapsible>
+
+                <a href="/pricing" className="text-lg font-medium hover:text-primary transition-colors">{t("nav.pricing")}</a>
+                <a href="/contact" className="text-lg font-medium hover:text-primary transition-colors">{t("nav.contact")}</a>
+                
                 <div className="pt-4 space-y-2">
                   <Button asChild variant="hero" className="w-full">
                     <a href="/book-demo">{t("nav.bookDemo")}</a>

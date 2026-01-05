@@ -165,7 +165,7 @@
   }
 
   .section-padding {
-    @apply py-16 lg:pt-24 lg:pb-24;
+    @apply pt-4 pb-16 sm:py-16 lg:pt-24 lg:pb-24;
   }
 
   /* Diagonal top transparency utility: uses a ::before pseudo element so content stays above the mask */

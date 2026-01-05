@@ -112,7 +112,7 @@ const Assets = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="section-padding relative overflow-hidden" style={{
+        <section className="section-padding pt-20 relative overflow-hidden" style={{
           background: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 25%, #7c3aed 50%, #ec4899 75%, #f97316 100%)'
         }}>
           {/* Animated stars/sparkles effect */}

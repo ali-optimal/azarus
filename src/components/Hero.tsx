@@ -13,7 +13,7 @@ const Hero = () => {
       {/* Geometric Shapes and Lines - Only in Hero Section */}
       <div className="hidden lg:block lg:fixed inset-0 overflow-hidden pointer-events-none z-0">
         {/* Animated circles */}
-        <div className="absolute top-20 left-[10%] w-32 h-32 border-2 border-orange-500/40 rounded-full animate-pulse" style={{ animationDuration: '3s' }} />
+        <div className="absolute top-96 left-[10%] w-32 h-32 border-2 border-orange-500/40 rounded-full animate-pulse" style={{ animationDuration: '3s' }} />
         <div className="absolute top-40 right-[15%] w-24 h-24 border-2 border-pink-500/40 rounded-full animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
         <div className="absolute bottom-32 left-[20%] w-40 h-40 border-2 border-purple-500/35 rounded-full animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
         

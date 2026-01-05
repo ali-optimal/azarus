@@ -21,7 +21,7 @@ const Index = () => {
         <Hero />
 
         {/* Overlapping centered dashboard section with stunning design */}
-        <section className="relative z-50 -mt-28" id="dashboard-section">
+        <section className="relative z-50 -mt-16" id="dashboard-section">
           <div className="relative py-32 overflow-hidden" id="dashboard-container">
             {/* SVG curve mask for smooth transition */}
             <svg className="absolute top-0 left-0 w-full h-full pointer-events-none" style={{ zIndex: -1 }}>

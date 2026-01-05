@@ -51,11 +51,11 @@ const ByIndustry = () => {
       
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-hero-gradient text-white relative overflow-hidden">
+        <section className="section-padding pt-20 bg-hero-gradient text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(45deg,rgba(255,255,255,0.1)_1px,transparent_1px),linear-gradient(-45deg,rgba(255,255,255,0.1)_1px,transparent_1px)] bg-[size:20px_20px]" />
           
           <div className="container-wide relative z-10">
-            <div className="max-w-4xl mx-auto text-center space-y-8">
+            <div className="max-w-4xl mx-auto text-center space-y-8 mt-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                   Solutions by Industry

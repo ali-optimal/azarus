@@ -94,7 +94,7 @@ const BySector = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="section-padding relative overflow-hidden" style={{
+      <section className="section-padding pt-20 relative overflow-hidden" style={{
         background: 'linear-gradient(135deg, #f4971b 0%, #a21464 100%)'
       }}>
         {/* Animated background elements */}
@@ -118,7 +118,7 @@ const BySector = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
         
         <div className="container-wide relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 text-white">
+          <div className="max-w-4xl mx-auto text-center space-y-8 text-white mt-8">
             <div className="space-y-6">
               <div className="inline-block">
                 <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-white/30">

@@ -90,7 +90,7 @@ const Contact = () => {
         {/* Grid overlay */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
-        <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24 relative z-10">
+        <div className="container-wide relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-32">
             {/* Left Content */}
             <motion.div 
@@ -161,7 +161,7 @@ const Contact = () => {
           <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}} />
         </div>
 
-        <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24">
+        <div className="container-wide">
           <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
             {/* Contact Form - Enhanced Luxury Design */}
             <motion.div
@@ -393,7 +393,7 @@ const Contact = () => {
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
 
-        <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24 relative z-10">
+        <div className="container-wide relative z-10">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

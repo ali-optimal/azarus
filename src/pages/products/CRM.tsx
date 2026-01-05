@@ -1050,16 +1050,16 @@ const CRM = () => {
           </div>
           
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-5 gap-6 relative">
+            <div className="grid md:grid-cols-5 gap-6 relative items-stretch">
               {/* Connection Line */}
               <div className="hidden md:block absolute top-20 left-0 right-0 h-1 bg-gradient-to-r from-orange-300 via-pink-300 to-rose-300 z-0" style={{top: '80px'}} />
               
               {workflows.map((workflow, index) => (
-                <div key={index} className="relative z-10">
+                <div key={index} className="relative z-10 h-full">
                   {/* 3D Card */}
-                  <div className="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-300 hover:-translate-y-2 transform perspective-1000">
+                  <div className="group bg-white rounded-3xl p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-orange-300 hover:-translate-y-2 transform perspective-1000 h-full flex flex-col">
                     {/* 3D Number Badge */}
-                    <div className="relative mx-auto w-20 h-20 mb-6">
+                    <div className="relative mx-auto w-20 h-20 mb-6 flex-shrink-0">
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500 opacity-20" />
                       <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-pink-600 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-110 transition-all duration-500">
                         <span className="text-3xl font-bold text-white">{workflow.step}</span>
@@ -1119,29 +1119,30 @@ const CRM = () => {
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto items-stretch">
             {kpis.map((kpi, index) => (
-              <div key={index} className="group relative perspective-1000">
+              <div key={index} className="group relative perspective-1000 h-full">
                 {/* Enhanced 3D Card with dramatic depth */}
-                <div className="relative preserve-3d transition-all duration-700 hover:rotate-y-5">
+                <div className="relative preserve-3d transition-all duration-700 hover:rotate-y-5 h-full">
                   {/* Shadow layers for 3D effect */}
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-3xl transform translate-y-4 translate-x-2 blur-md opacity-20 group-hover:opacity-30 transition-opacity" />
                   <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-3xl transform translate-y-2 translate-x-1 blur-sm opacity-10 group-hover:opacity-20 transition-opacity" />
                   
                   {/* Main card */}
-                  <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border-2 border-gray-100 hover:border-blue-200 hover:-translate-y-4 hover:scale-105 transform">
+                  <div className="relative bg-white rounded-3xl p-8 shadow-2xl hover:shadow-3xl transition-all duration-500 border-2 border-gray-100 hover:border-blue-200 hover:-translate-y-4 hover:scale-105 transform h-full flex flex-col">
                     {/* Gradient overlay */}
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-indigo-50/30 to-purple-50/50 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     
-                    {/* Top accent bar with gradient */}
-                    <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-t-3xl" />
+                    {/* Top accent bar - Split design to match image */}
+                    <div className="absolute top-0 left-0 w-[40%] h-1.5 bg-blue-500 rounded-tl-3xl" />
+                    <div className="absolute top-0 right-0 w-[40%] h-1.5 bg-purple-500 rounded-tr-3xl" />
                     
                     {/* Floating icon badge */}
                     <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 z-10">
                       <div className="relative w-16 h-16">
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl transform rotate-6 group-hover:rotate-12 transition-transform duration-500 blur-sm opacity-40" />
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all duration-500">
-                          <span className="text-2xl">📈</span>
+                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all duration-500">
+                          <TrendingUp className="h-8 w-8 text-white" />
                         </div>
                         {/* Icon glow */}
                         <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl blur-xl opacity-0 group-hover:opacity-60 transition-opacity duration-500" />
@@ -1149,19 +1150,21 @@ const CRM = () => {
                     </div>
                     
                     {/* Content with enhanced styling */}
-                    <div className="relative text-center pt-10">
+                    <div className="relative text-center pt-10 flex-1 flex flex-col">
                       {/* Large value with 3D text effect */}
-                      <div className="relative inline-block mb-4">
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent blur-sm opacity-50">
-                          <div className="text-6xl font-black">{kpi.value}</div>
-                        </div>
-                        <div className="relative text-6xl font-black bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
-                          {kpi.value}
+                      <div className="relative inline-block mb-4 flex-1 flex items-center justify-center">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-indigo-600 bg-clip-text text-transparent blur-sm opacity-50">
+                            <div className="text-5xl lg:text-6xl font-black">{kpi.value}</div>
+                          </div>
+                          <div className="relative text-5xl lg:text-6xl font-black bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-500">
+                            {kpi.value}
+                          </div>
                         </div>
                       </div>
                       
                       {/* Label with refined typography */}
-                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider leading-relaxed px-4">
+                      <div className="text-xs font-bold text-gray-500 uppercase tracking-wider leading-relaxed px-4 mt-auto">
                         {kpi.metric}
                       </div>
                     </div>

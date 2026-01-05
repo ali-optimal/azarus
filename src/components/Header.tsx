@@ -9,7 +9,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { Menu, Languages, ChevronDown } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
@@ -139,8 +139,8 @@ const Header = () => {
 
         {/* CTA Buttons */}
         <div className={cn("ml-auto flex items-center", isRTL ? "space-x-reverse space-x-4" : "space-x-4")}>
-          {/* Language Switcher */}
-          <DropdownMenu>
+          {/* Language Switcher - HIDDEN */}
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
                 <Languages className="h-5 w-5" />
@@ -160,7 +160,7 @@ const Header = () => {
                 العربية
               </DropdownMenuItem>
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
 
           <Button asChild variant="hero" size="lg" className="hidden lg:inline-flex">
             <a href="/book-demo">{t("nav.bookDemo")}</a>
@@ -244,7 +244,8 @@ const Header = () => {
                   <Button asChild variant="hero" className="w-full">
                     <a href="/book-demo">{t("nav.bookDemo")}</a>
                   </Button>
-                  <div className="flex justify-center space-x-2 pt-2">
+                  {/* Language buttons - HIDDEN */}
+                  {/* <div className="flex justify-center space-x-2 pt-2">
                     <Button
                       variant={i18n.language === 'en' ? 'default' : 'outline'}
                       size="sm"
@@ -259,7 +260,7 @@ const Header = () => {
                     >
                       AR
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
               </nav>
             </SheetContent>

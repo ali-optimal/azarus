@@ -11,7 +11,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]" />
       
       {/* Geometric Shapes and Lines - Only in Hero Section */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      <div className="hidden lg:block lg:fixed inset-0 overflow-hidden pointer-events-none z-0">
         {/* Animated circles */}
         <div className="absolute top-20 left-[10%] w-32 h-32 border-2 border-orange-500/40 rounded-full animate-pulse" style={{ animationDuration: '3s' }} />
         <div className="absolute top-40 right-[15%] w-24 h-24 border-2 border-pink-500/40 rounded-full animate-pulse" style={{ animationDuration: '4s', animationDelay: '0.5s' }} />
@@ -51,8 +51,8 @@ const Hero = () => {
       </div>
       
       <div className="container-wide relative">
-        {/* Invisible placeholder duplicates hero layout to preserve margins/padding */}
-        <div aria-hidden="true" className="invisible">
+        {/* Invisible placeholder duplicates hero layout to preserve margins/padding - Only for desktop */}
+        <div aria-hidden="true" className="invisible hidden lg:block">
           <div className="grid lg:grid-cols-2 gap-12 items-center section-padding">
             <div className="space-y-8">
               <div className="space-y-4">
@@ -77,11 +77,11 @@ const Hero = () => {
         </div>
 
         {/* fixed hero: stays visible while next content scrolls above (next section needs higher z) */}
-        <div className="fixed inset-x-0 top-0 z-10 bg-transparent">
+        <div className="relative lg:fixed inset-x-0 top-0 z-10 bg-transparent">
           <div className="container-wide section-padding">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Content */}
-              <div className="space-y-8">
+              <div className="space-y-6 lg:space-y-8">
                 <div className="space-y-4">
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
                     <span className="text-gradient">{t("hero.title")}</span>
@@ -123,14 +123,15 @@ const Hero = () => {
               </div>
 
               {/* Phone Mockups */}
-              <div className="flex justify-center">
+              <div className="flex justify-center items-center relative">
                 <img
                   src={encodeURI("/ChatGPT Image Dec 15, 2025, 11_10_33 PM (1).png")}
                   alt="Phone mockups"
                   loading="eager"
                   decoding="async"
                   fetchpriority="high"
-                  className="w-full max-w-2xl rounded-2xl"
+                  className="w-full max-w-md lg:max-w-2xl rounded-2xl hero-image"
+                  style={{ position: 'relative', zIndex: 1 }}
                 />
               </div>
             </div>

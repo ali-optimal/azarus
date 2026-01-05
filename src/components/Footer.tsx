@@ -88,11 +88,11 @@ const Footer = () => {
       </div>
       
       {/* Main Footer Content */}
-      <div className="section-padding pt-32">
+      <div className="section-padding">
         <div className="container-wide">
-          <div className="grid lg:grid-cols-6 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
             {/* Company Info */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="col-span-2 md:col-span-3 lg:col-span-2 space-y-6">
               <div className="flex items-center space-x-2">
                 <img 
                   src="/lovable-uploads/bfa528b8-7900-4256-88f1-1888db75bb90.png" 

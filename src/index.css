@@ -161,7 +161,7 @@
 
   /* Layout Utilities */
   .container-wide {
-    @apply mx-auto px-12 lg:px-20 xl:px-24;
+    @apply mx-auto px-4 sm:px-12 lg:px-20 xl:px-24;
   }
 
   .section-padding {

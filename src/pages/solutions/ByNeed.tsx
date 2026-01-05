@@ -113,12 +113,7 @@ const ByNeed = () => {
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
-              <Button size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-purple-600 transition-all group">
-                <a href="/contact" className="flex items-center">
-                  <Play className="mr-2 h-4 w-4" />
-                  Get Consultation
-                </a>
-              </Button>
+
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Check, Star, ArrowRight, Sparkles, Shield, Zap } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const Pricing = () => {
   const [isAnnual, setIsAnnual] = useState(false);
@@ -14,9 +15,9 @@ const Pricing = () => {
   const plans = [
     {
       name: "Starter",
-      description: "Perfect for small businesses and startups getting started",
-      monthlyPrice: 29,
-      annualPrice: 290,
+      description: "Perfect for small businesses and startups ",
+      monthlyPrice: 33,
+      annualPrice: 300,
       popular: false,
       icon: Zap,
       color: "from-blue-500 to-cyan-500",
@@ -33,8 +34,8 @@ const Pricing = () => {
     {
       name: "Professional",
       description: "Ideal for growing businesses ready to scale",
-      monthlyPrice: 79,
-      annualPrice: 790,
+      monthlyPrice: 59,
+      annualPrice: 580,
       popular: true,
       icon: Sparkles,
       color: "from-orange-500 to-pink-500",
@@ -53,8 +54,8 @@ const Pricing = () => {
     {
       name: "Enterprise",
       description: "For large organizations with enterprise needs",
-      monthlyPrice: 149,
-      annualPrice: 1490,
+      monthlyPrice: 99,
+      annualPrice: 999,
       popular: false,
       icon: Shield,
       color: "from-purple-500 to-indigo-500",
@@ -88,7 +89,7 @@ const Pricing = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="section-padding pt-20 relative overflow-hidden" style={{
+      <section className="relative overflow-hidden" style={{
         background: 'linear-gradient(135deg, #1e3a8a 0%, #3730a3 25%, #7c3aed 50%, #ec4899 75%, #f97316 100%)'
       }}>
         {/* Animated background elements */}
@@ -112,7 +113,7 @@ const Pricing = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
         
         <div className="container-wide relative z-10">
-          <div className="max-w-4xl mx-auto text-center space-y-8 text-white">
+          <div className="max-w-4xl mx-auto text-center space-y-8 text-white py-20 lg:py-32">
             <div className="space-y-6">
               <div className="inline-block">
                 <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-semibold border border-white/30">
@@ -189,7 +190,7 @@ const Pricing = () => {
             </span>
             {isAnnual && (
               <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 px-4 py-2 animate-pulse shadow-lg ml-2 text-sm font-bold">
-                Save up to 17%
+                Save up to 24%
               </Badge>
             )}
           </div>
@@ -258,25 +259,6 @@ const Pricing = () => {
                 <div className="absolute bottom-4 left-4 w-2 h-2 bg-gradient-to-br from-pink-400 to-orange-400 rounded-full opacity-15 group-hover:opacity-30 transition-opacity" />
               </Card>
             ))}
-          </div>
-
-          {/* Additional Info */}
-          <div className="text-center mt-20">
-            <div className="max-w-2xl mx-auto bg-gradient-to-r from-blue-50 to-pink-50 rounded-2xl p-8 border border-blue-200">
-              <p className="text-gray-700 mb-6 text-lg leading-relaxed">
-                🚀 All plans include <strong>14-day free trial</strong> • ✨ No setup fees • 🔄 Cancel anytime
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="outline" size="lg" className="border-2 border-blue-300 hover:bg-blue-50 group">
-                  Compare All Features
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-                <Button variant="ghost" size="lg" className="hover:bg-pink-50 group">
-                  Questions? Contact Sales
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </section>

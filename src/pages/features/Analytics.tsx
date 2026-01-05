@@ -114,10 +114,6 @@ const Analytics = () => {
                   Start Free Trial
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button variant="outline" size="xl" className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 group">
-                  <Play className="mr-2 h-5 w-5" />
-                  View Demo
-                </Button>
               </motion.div>
 
               {/* Stats */}

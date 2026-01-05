@@ -1,4 +1,3 @@
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { motion } from 'framer-motion';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { CheckCircle, Calendar, Users, Zap, Video, Clock, Award, Sparkles, ArrowRight, Send, Star, TrendingUp, Shield } from "lucide-react";
+import { CheckCircle, Calendar, Users, Zap, Video, Clock, Award, Sparkles, ArrowRight, Send, Star, TrendingUp, Shield, BarChart3, PieChart, Activity } from "lucide-react";
 
 const BookDemo = () => {
   const demoFeatures = [
@@ -71,7 +70,7 @@ const BookDemo = () => {
           <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
           <div className="container mx-auto px-12 md:px-16 lg:px-20 xl:px-24 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-32">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center py-20 lg:py-32">
               {/* Left Content */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
@@ -123,20 +122,111 @@ const BookDemo = () => {
                 </div>
               </motion.div>
 
-              {/* Right Content - Lottie Animation */}
+              {/* Right Content - Scheduling Mockup */}
               <motion.div 
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: 0.2 }}
-                className="relative"
+                initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative perspective-1000 block"
               >
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" />
-                <DotLottieReact
-                  src="https://lottie.host/embed/f8d9e7c6-4a5b-4c3d-8e2f-d3c4e5f6a7b8/XyZaBcDeFg.json"
-                  loop
-                  autoplay
-                  className="w-full h-auto relative z-10"
-                />
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-3xl blur-3xl animate-pulse" />
+                
+                {/* Main Calendar Window */}
+                <div className="relative z-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden transform rotate-y-12 hover:rotate-y-0 transition-transform duration-500">
+                  {/* Window Header */}
+                  <div className="h-12 border-b border-white/10 flex items-center px-4 justify-between bg-white/5">
+                    <div className="flex gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
+                    </div>
+                    <div className="text-white/60 text-sm font-medium">Schedule Meeting</div>
+                    <div className="w-6" />
+                  </div>
+
+                  {/* Calendar Content */}
+                  <div className="p-6">
+                    <div className="flex justify-between items-center mb-6">
+                      <div className="text-white font-semibold text-lg">January 2026</div>
+                      <div className="flex gap-2">
+                        <div className="p-1 rounded hover:bg-white/10 cursor-pointer"><ArrowRight className="h-4 w-4 text-white rotate-180" /></div>
+                        <div className="p-1 rounded hover:bg-white/10 cursor-pointer"><ArrowRight className="h-4 w-4 text-white" /></div>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-7 gap-2 mb-2 text-center">
+                      {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
+                        <div key={d} className="text-white/40 text-xs font-medium">{d}</div>
+                      ))}
+                    </div>
+                    
+                    <div className="grid grid-cols-7 gap-2">
+                      {Array.from({ length: 31 }).map((_, i) => {
+                        const day = i + 1;
+                        const isSelected = day === 15;
+                        const isToday = day === 5;
+                        return (
+                          <div 
+                            key={i} 
+                            className={`
+                              aspect-square rounded-lg flex items-center justify-center text-sm relative group cursor-pointer transition-all
+                              ${isSelected ? 'bg-blue-500 text-white shadow-lg shadow-blue-500/50' : 'text-white/80 hover:bg-white/10'}
+                              ${isToday ? 'border border-blue-400/50' : ''}
+                            `}
+                          >
+                            {day}
+                            {isSelected && (
+                              <motion.div 
+                                layoutId="selection"
+                                className="absolute inset-0 border-2 border-white/50 rounded-lg"
+                                transition={{ duration: 0.3 }}
+                              />
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Floating Time Slot Card */}
+                <motion.div 
+                  animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="absolute -right-8 top-20 bg-white/90 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl z-20 w-48"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                      <Clock className="h-4 w-4 text-blue-600" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">Available Time</div>
+                      <div className="text-sm font-bold text-gray-800">10:00 AM</div>
+                    </div>
+                  </div>
+                  <div className="h-1 w-full bg-gray-100 rounded-full overflow-hidden">
+                    <div className="h-full w-2/3 bg-blue-500 rounded-full" />
+                  </div>
+                </motion.div>
+
+                {/* Floating Confirmation Card */}
+                <motion.div 
+                  animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                  className="absolute -left-8 bottom-20 bg-white/90 backdrop-blur-md border border-white/20 p-4 rounded-xl shadow-xl z-20"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="h-10 w-10 rounded-full bg-green-100 flex items-center justify-center">
+                      <Video className="h-5 w-5 text-green-600" />
+                    </div>
+                    <div>
+                      <div className="text-xs text-gray-500">Demo Session</div>
+                      <div className="text-sm font-bold text-gray-800">Confirmed</div>
+                    </div>
+                    <div className="ml-2 h-2 w-2 rounded-full bg-green-500 animate-pulse" />
+                  </div>
+                </motion.div>
               </motion.div>
             </div>
           </div>

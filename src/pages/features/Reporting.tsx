@@ -124,12 +124,6 @@ const Reporting = () => {
                   <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </a>
               </Button>
-              <Button variant="outline" size="xl" className="border-2 border-white/30 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 group">
-                <a href="/contact" className="flex items-center">
-                  <Play className="mr-2 h-5 w-5" />
-                  View Examples
-                </a>
-              </Button>
             </motion.div>
 
             {/* Stats */}

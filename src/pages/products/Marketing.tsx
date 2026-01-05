@@ -125,7 +125,6 @@ const Marketing = () => {
                  </Button>
                  <Button size="lg" className="bg-transparent text-white border-2 border-white hover:bg-white hover:text-purple-600 transition-all group">
                    <a href="/contact" className="flex items-center">
-                     <Play className="mr-2 h-4 w-4" />
                      Contact Sales
                    </a>
                  </Button>

@@ -91,7 +91,7 @@ const Contact = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:50px_50px]" />
 
         <div className="container-wide relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center py-20 lg:py-32">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center py-20 lg:py-32">
             {/* Left Content */}
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
@@ -127,21 +127,83 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            {/* Right Content - Lottie Animation */}
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
-            >
-              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl animate-pulse" />
-              <DotLottieReact
-                src="https://lottie.host/embed/7d3e9f79-8c6a-4f1b-9e8e-c4e3d4e1f4c2/FGvL9mMDJP.json"
-                loop
-                autoplay
-                className="w-full h-auto relative z-10"
-              />
-            </motion.div>
+              {/* Right Content - Contact Mockup */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9, rotateY: -10 }}
+                animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="relative perspective-1000 block"
+              >
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/30 via-purple-500/30 to-pink-500/30 rounded-3xl blur-3xl animate-pulse" />
+                
+                {/* Main Chat Window */}
+                <div className="relative z-10 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl overflow-hidden transform rotate-y-12 hover:rotate-y-0 transition-transform duration-500">
+                  {/* Window Header */}
+                  <div className="h-16 border-b border-white/10 flex items-center px-6 justify-between bg-white/5">
+                    <div className="flex items-center gap-4">
+                       <div className="relative">
+                         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white font-bold">AS</div>
+                         <div className="absolute bottom-0 right-0 w-3 h-3 bg-green-400 border-2 border-[#1e3a8a] rounded-full"></div>
+                       </div>
+                       <div>
+                         <div className="text-white font-semibold">Azarus Support</div>
+                         <div className="text-blue-200 text-xs">Typically replies in 2 mins</div>
+                       </div>
+                    </div>
+                    <div className="flex gap-2">
+                      <div className="w-2 h-2 rounded-full bg-white/20" />
+                      <div className="w-2 h-2 rounded-full bg-white/20" />
+                      <div className="w-2 h-2 rounded-full bg-white/20" />
+                    </div>
+                  </div>
+
+                  {/* Chat Content */}
+                  <div className="p-6 space-y-6 h-[320px] overflow-hidden relative">
+                    {/* Message 1 (User) */}
+                    <div className="flex justify-end">
+                      <div className="bg-blue-600 text-white px-4 py-3 rounded-2xl rounded-tr-sm max-w-[80%] shadow-lg">
+                        <p className="text-sm">Hi, I'd like to learn more about the Enterprise integration options.</p>
+                      </div>
+                    </div>
+
+                    {/* Message 2 (Agent) */}
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 1 }}
+                      className="flex justify-start"
+                    >
+                      <div className="bg-white/10 backdrop-blur-md border border-white/10 text-white px-4 py-3 rounded-2xl rounded-tl-sm max-w-[80%] shadow-lg">
+                        <p className="text-sm">Hello! I'd be happy to help you with that. We support REST API, GraphQL, and custom connectors.</p>
+                      </div>
+                    </motion.div>
+
+                     {/* Message 3 (Agent - Typing) */}
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ delay: 2.5 }}
+                      className="flex justify-start"
+                    >
+                      <div className="bg-white/10 backdrop-blur-md border border-white/10 px-4 py-3 rounded-2xl rounded-tl-sm shadow-lg flex gap-1 items-center h-10">
+                        <div className="w-2 h-2 bg-white/50 rounded-full animate-bounce" style={{ animationDelay: '0s' }} />
+                        <div className="w-2 h-2 bg-white/50 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }} />
+                        <div className="w-2 h-2 bg-white/50 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }} />
+                      </div>
+                    </motion.div>
+                  </div>
+                  
+                  {/* Input Area Mockup */}
+                  <div className="h-16 border-t border-white/10 bg-white/5 px-6 flex items-center gap-4">
+                    <div className="w-6 h-6 rounded-full bg-white/20" />
+                    <div className="flex-1 h-8 bg-white/10 rounded-full" />
+                    <div className="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center">
+                      <Send className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
           </div>
         </div>
 
@@ -325,47 +387,7 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Quick Actions */}
-              <div className="space-y-4 pt-4">
-                <h3 className="text-xl font-bold text-gray-900">Quick Actions</h3>
-                <div className="grid gap-4">
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-white border-2 border-gray-200 hover:border-blue-500 hover:bg-blue-50 text-gray-900 shadow-md hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <Calendar className="mr-2 h-5 w-5 group-hover:text-blue-600 transition-colors" />
-                    Schedule a Demo
-                    <ArrowRight className="ml-auto h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                  <Button 
-                    size="lg" 
-                    className="w-full bg-white border-2 border-gray-200 hover:border-purple-500 hover:bg-purple-50 text-gray-900 shadow-md hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <FileText className="mr-2 h-5 w-5 group-hover:text-purple-600 transition-colors" />
-                    Download Brochure
-                    <ArrowRight className="ml-auto h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </div>
-              </div>
 
-              {/* Business Hours */}
-              <Card className="bg-gradient-to-br from-gray-50 to-gray-100 border-2 border-gray-200">
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl shadow-lg">
-                      <Clock className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-lg mb-2">Business Hours</h3>
-                      <div className="space-y-1 text-sm text-muted-foreground">
-                        <p><strong className="text-gray-900">Mon - Fri:</strong> 9:00 AM - 6:00 PM GMT</p>
-                        <p><strong className="text-gray-900">Saturday:</strong> 10:00 AM - 4:00 PM GMT</p>
-                        <p><strong className="text-gray-900">Sunday:</strong> Closed</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
             </motion.div>
           </div>
         </div>
